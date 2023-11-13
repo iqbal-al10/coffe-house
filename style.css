@@ -146,6 +146,16 @@ body {
   .contact .row .form {
     padding-top: .5rem;
   }
+
+  .contact .sosmed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem 3rem;
+    font-size: 2rem;
+    border-radius: .1rem;
+  }
 }
 
 /* Phone */
@@ -628,7 +638,6 @@ body {
 
 .contact .sosmed {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0rem 3rem;
