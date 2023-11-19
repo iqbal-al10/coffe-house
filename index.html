@@ -25,7 +25,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-
   </head>
   <body>
     <!-- Navbar Start -->
@@ -39,19 +38,57 @@
       <div class="navbar-nav">
         <a class="navbar-menu" href="#">Home</a>
         <a class="navbar-menu" href="#about">About Us</a>
-        <a class="navbar-menu" href="#product">Product</a>
+        <a class="navbar-menu" href="#product">Menu</a>
+        <a class="navbar-menu" href="#store">Store</a>
         <a class="navbar-menu" href="#contact">Contact</a>
       </div>
 
       <div class="navbar-extra">
-        <a id="search" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a id="cart-shopping" href="#"
+        <!-- Search Form Start -->
+        <div class="search-form">
+          <input
+            type="search"
+            id="search-box"
+            placeholder="Search Here..."
+            id="search-box"
+          />
+          <label for="search-box"></label>
+        </div>
+        <!-- Search Form End -->
+
+        <a id="search-button" href="#"
+          ><i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a id="cart-shopping-button" href="#"
           ><i class="fa-solid fa-cart-shopping"></i
         ></a>
         <a id="menu-bars" class="menu-bars" href="#"
           ><i class="fa-solid fa-bars"></i
         ></a>
       </div>
+      <!-- Shopping Cart Start -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="assets/img/regular/regular-beans.jpeg" alt="Product 1" />
+          <div class="item-detail">
+            <h5>Arabica Beans</h5>
+            <div class="item-price">Rp 44.000</div>
+          </div>
+          <i class="remove-item fa-regular fa-trash-can"></i>
+        </div>
+
+        <div class="cart-item">
+          <img src="assets/img/regular/regular-beans.jpeg" alt="Product 1" />
+          <div class="item-detail">
+            <h5>Product 1</h5>
+            <div class="item-price">Rp 44.000</div>
+          </div>
+          <i class="remove-item fa-regular fa-trash-can"></i>
+        </div>
+      </div>
+
+      <!-- Shopping Cart End -->
     </nav>
     <!-- Navbar End -->
 
@@ -81,8 +118,8 @@
           <img src="assets/img/about-img.jpg" alt="About Us" />
         </div>
 
-        <article class="content">
-          <h3>Kenapa Harus Memilih <span>Kami?</span></h3>
+        <article>
+          <h3>Kenapa Harus Memilih <span> Kami? </span></h3>
           <p class="visi">
             "Kedai kopi kami adalah tempat yang mengundang para pencinta kopi
             untuk mengeksplorasi dunia cita rasa kopi yang mendalam, Dengan
@@ -102,8 +139,7 @@
     <section id="product" class="product">
       <h2>Product</h2>
       <p class="trademark2">
-        "Nikmati kelezatan penuh rasa dalam setiap tegukan. Pengalaman kopi yang
-        tak terlupakan!"
+        "Nikmati kelezatan penuh rasa dalam setiap tegukan!"
       </p>
 
       <!-- Flip Card Product Start -->
@@ -340,6 +376,303 @@
     </section>
     <!-- Product Section End -->
 
+    <!-- Store Section Start -->
+    <section id="store" class="store">
+      <h2>Store</h2>
+      <p class="trademark3">
+        "Biji Berkualitas, Hidup yang Lebih Berkualitas!"
+      </p>
+
+      <!-- Store Card -->
+      <div class="row">
+        <!-- Store Card 1 -->
+        <div class="store-card" data-product-id="store-card1">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/regular/regular-beans.jpeg"
+              alt="Regular Beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Regular Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi regular kami adalah pencapaian sempurna dari klasik yang
+              tak ternilai. Dipilih dari sumber-sumber terbaik di berbagai
+              wilayah penghasil kopi, biji kopi ini mewakili dedikasi kami untuk
+              memberikan pengalaman kopi yang istimewa dan autentik.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 44.000 <span class="store-price-asli">Rp 75.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store Card 2 -->
+        <div class="store-card" data-product-id="store-card2">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/espresso/epresso-beans.jpeg"
+              alt="Espresso Beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Espresso Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi espresso kami adalah perwujudan dari kekuatan dan
+              kekayaan cita rasa yang diinginkan oleh para penikmat espresso
+              sejati. Dipilih dari biji kopi kualitas tertinggi, blend ini
+              didesain khusus untuk memberikan pengalaman espresso yang mendalam
+              dan memuaskan
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 54.000 <span class="store-price-asli">Rp 79.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store Card 3 -->
+        <div class="store-card" data-product-id="store-card3">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/luwak/luwak-beans.jpeg"
+              alt="Luwak beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Luwak Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi Luwak, juga dikenal sebagai "kopi civet," adalah
+              keajaiban alam yang dihasilkan melalui perjalanan unik di dunia
+              kopi. Dipandang sebagai salah satu biji kopi paling langka dan
+              eksklusif, produk kami memberikan pengalaman kopi yang benar-benar
+              istimewa.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 69.000 <span class="store-price-asli">Rp 109.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store Card 4 -->
+        <div class="store-card" data-product-id="store-card4">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/arabika/arabika-beans.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Arabica Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi Arabika yang kami tawarkan adalah perwujudan dari
+              keindahan dan kehalusan kopi. Dipetik dari ketinggian yang optimal
+              di wilayah penghasil kopi pilihan, produk ini menawarkan
+              pengalaman kopi Arabika yang khas dan memikat.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 50.000 <span class="store-price-asli">Rp 79.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store Card 5 -->
+        <div class="store-card" data-product-id="store-card5">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/exelsa/excelsa-beans.jpg"
+              alt="Excelsa Beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Excelsa Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi Excelsa kami menawarkan petualangan rasa yang unik dan
+              luar biasa. Dipilih dengan hati-hati dari daerah penghasil kopi
+              pilihan, mempersembahkan pengalaman kopi yang memikat dan
+              eksentrik.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 54.000 <span class="store-price-asli">Rp 79.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store Card 6 -->
+        <div class="store-card" data-product-id="store-card6">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/latte/latte-beans.jpeg"
+              alt="Latte Beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Latte Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi latte blend kami adalah penyatuan sempurna antara biji
+              kopi berkualitas tinggi dan kelembutan susu, diciptakan khusus
+              untuk menghadirkan pengalaman kopi latte yang lembut dan memikat.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 54.000 <span class="store-price-asli">Rp 79.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store cars 7 -->
+        <div class="store-card" data-product-id="store-card7">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/liberica/liberica-beans.jpg"
+              alt="Liberica Beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Liberica Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi Liberica kami menawarkan petualangan rasa yang eksotis
+              dan unik. Dipilih secara khusus dari daerah penghasil kopi yang
+              terpilih, produk ini mempersembahkan rasa khas varietas Liberica
+              yang jarang ditemui.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 54.000 <span class="store-price-asli">Rp 79.000 </span>
+            </div>
+          </div>
+        </div>
+        <!-- Store Card 8 -->
+        <div class="store-card" data-product-id="store-card8">
+          <div class="store-icons">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="item-detail-button"
+              ><i class="fa-solid fa-eye"></i
+            ></a>
+          </div>
+          <div class="store-img">
+            <img
+              class="foto-product"
+              src="assets/img/robusta/robusta-beans.jpeg"
+              alt="Robusta Beans"
+            />
+          </div>
+          <div class="store-description">
+            <h4 class="judul">> Robusta Beans <</h4>
+            <p class="description-product" style="display: none">
+              Biji kopi Robusta kami adalah pilihan yang memukau bagi para
+              pecinta kopi yang menginginkan kekuatan dan karakter yang
+              mencolok. Dipilih secara cermat dari perkebunan kopi terbaik,
+              produk ini menawarkan pengalaman kopi yang intens dan memuaskan.
+            </p>
+            <div class="store-rating">
+              <i class="star1 fa-solid fa-star"></i>
+              <i class="star2 fa-solid fa-star"></i>
+              <i class="star3 fa-solid fa-star"></i>
+              <i class="star4 fa-solid fa-star"></i>
+              <i class="star5 fa-solid fa-star"></i>
+            </div>
+            <div class="store-price">
+              Rp 47.000 <span class="store-price-asli">Rp 69.000 </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Store Section End -->
+
     <!-- Contact Section Start -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
@@ -390,22 +723,56 @@
 
     <!-- Footer Start -->
     <footer>
-      <p>Created By : Iqbal_al <span style="color: #000;"> | </span> &copy; 2023</p>
+      <p>
+        Created By : Iqbal_al <span style="color: #000"> | </span> &copy; 2023
+      </p>
       <div class="footer-sosmed">
         <a href="https://wa.me/+6285746222168"
-        ><i class="fa-brands fa-whatsapp"></i
-          ></a>
-          <a
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a
           href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=iqbal.alhuda1007@gmail.com"
           ><i class="fa-regular fa-envelope"></i
-            ></a>
-          <a
-          href="https://www.instagram.com/iqbal_alh"
+        ></a>
+        <a href="https://www.instagram.com/iqbal_alh"
           ><i class="fa-brands fa-instagram"></i
-            ></a>
-          </div>
+        ></a>
+      </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Modal Box Item detail Start -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-button"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-content">
+          <div class="main-content">
+            <img class="product-foto" src="" alt="" />
+          </div>
+          <div class="modal-description">
+            <h4 class="judul-product"></h4>
+            <p class="description-modal"></p>
+            <div class="description-rating1">
+              <i class="star-1"></i>
+              <i class="star-2"></i>
+              <i class="star-3"></i>
+              <i class="star-4"></i>
+              <i class="star-5"></i>
+            </div>
+            <div class="description-price">
+              <span class="description-price-asli"></span>
+            </div>
+            <a href=""
+              ><i class="fa-solid fa-cart-shopping"></i
+              ><span>Add to cart</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Box Item detail End -->
+
     <!-- JS -->
     <script src="js/app.js"></script>
   </body>
