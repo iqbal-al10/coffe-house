@@ -723,7 +723,7 @@ body {
   color: var(--primary);
 }
 
-.store .row {
+.store .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1.5rem;
@@ -752,11 +752,11 @@ body {
   margin: 0 2rem;
 }
 
-.fa-fire-flame-curved {
+.store .hot-offer {
   width: 2.5rem;
   height: 2.5rem;
+  font-size: 1.75rem;
   color: red;
-  border: 1px solid #666;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -794,92 +794,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.store .store-rating1,
-.store-rating2,
-.store-rating3 {
+.store .store-rating{
+  display: flex;
+  justify-content: center;
   font-style: 1.5rem;
   padding: 0.5rem 0;
   color: var(--primary);
   background-color: #fff;
 }
 
-.store .store-rating1 .star5 {
-  color: var(--primary);
-}
-
-.store .store-rating2 .star5 {
-  color: var(--primary);
-}
-
-.store .store-rating3 .star5 {
-  color: var(--primary);
-}
-
-.store .store-rating4 {
-  font-style: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--primary);
-  background-color: #fff;
-}
-
-.store .store-rating4 .star5 {
-  color: var(--bg);
-}
-
-.store .store-rating4 .star4 {
-  background: linear-gradient(to right, var(--primary) 50%, #000 50%);
-  -webkit-background-clip: text;
-  color: transparent;
-  background-clip: text;
-}
-
-.store .store-rating5 {
-  font-style: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--primary);
-  background-color: #fff;
-}
-
-.store .store-rating5 .star5 {
-  color: var(--bg);
-}
-
-.store .store-rating6 {
-  font-style: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--primary);
-  background-color: #fff;
-}
-
-.store .store-rating6 .star5 {
-  background: linear-gradient(to right, var(--primary) 50%, #000 50%);
-  -webkit-background-clip: text;
-  color: transparent;
-  background-clip: text;
-}
-
-.store .store-rating7 {
-  font-style: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--primary);
-  background-color: #fff;
-}
-
-.store .store-rating7 .star4,
-.star5 {
-  color: var(--bg);
-}
-
-.store .store-rating8 {
-  font-style: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--primary);
-  background-color: #fff;
-}
-
-.store .store-rating8 {
-  color: var(--bg);
-}
 
 .store .store-price {
   margin-top: 0.5rem;
@@ -903,6 +826,179 @@ body {
   filter: blur(10px);
   transform: scale(0.95);
 }
+
+/* Modal Box */
+/* Item Detail */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Animation */
+@keyframes slideToBottom {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal .modal-container {
+  display: flex;
+  position: relative;
+  color: var(--bg);
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #666;
+  width: 80%;
+  border-radius: 0.1rem;
+  box-shadow: 0 13px 13px -10px rgba(255, 255, 255, 0.75);
+  animation: slideToBottom 500ms;
+}
+
+.modal .modal-container .fa-xmark {
+  position: absolute;
+  right: .25rem;
+  top: 0;
+  font-size: 1.5rem;
+}
+
+.modal .modal-container .fa-xmark:hover {
+  color: var(--primary);
+}
+
+.modal .modal-container .modal-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.modal .main-content {
+  width: 33%;
+  height: 100%;
+}
+
+.modal .main-content img {
+  height: 100%;
+  width: 100%;
+  padding: .5rem;
+  margin-bottom: 2rem;
+}
+
+.modal .modal-description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  width: 67%;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.modal .modal-container .modal-description h4 {
+  font-size: 1.2rem;
+}
+
+.modal .modal-container .modal-description p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+}
+
+.description-rating1,
+.description-rating2,
+.description-rating3 {
+  font-style: 1.5rem;
+  padding: 0.5rem 0;
+  color: var(--primary);
+}
+
+.description-rating1 .star5 {
+  color: var(--primary);
+}
+
+.description-price {
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.description-price-promo {
+  margin-right: .25rem;
+}
+
+.description-price-asli{
+  font-size: 0.8rem;
+  font-weight: 100;
+  text-decoration: line-through;
+  margin-left: .25rem;
+}
+
+.modal .modal-description a {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  background-color: var(--bg);
+  color: #fff;
+  padding: .5rem 0;
+  border-radius: .1rem;
+  transition: all 400ms ease-in-out;
+}
+
+.modal .modal-description a:hover {
+  box-shadow: 0 12px 12px 0px #000000df;
+  color: var(--bg);
+  background-color: var(--primary);
+  transform: scale(.95);
+}
+
+.modal .modal-description a .fa-cart-shopping {
+  position: absolute;
+  height: 40px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 400ms;
+}
+
+.modal .modal-description a span {
+  transform: translateX(40px);
+}
+
+.modal .modal-description a:hover .fa-cart-shopping {
+  width: 150px;
+}
+
+.modal .modal-description a:hover span {
+  transition: all 400ms;
+  opacity: 0;
+}
+
+.modal .modal-description a:focus {
+  outline: none;
+}
+
+.modal .modal-description a:active .fa-cart-shopping {
+  transform: scale(.85);
+}
+
+
+
 
 /* Contact Section */
 .contact h2 {
@@ -1235,169 +1331,3 @@ footer .footer-sosmed .fa-instagram:hover {
   transform: scale(1.2);
   transition: 200ms;
 }
-
-/* Modal Box */
-/* Item Detail */
-.modal {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-/* Modal Animation */
-@keyframes slideToBottom {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-.modal .modal-container {
-  display: flex;
-  position: relative;
-  color: var(--bg);
-  background-color: #fefefe;
-  margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid #666;
-  width: 80%;
-  border-radius: 0.1rem;
-  box-shadow: 0 13px 13px -10px rgba(255, 255, 255, 0.75);
-  animation: slideToBottom 500ms;
-}
-
-.modal .modal-container .fa-xmark {
-  position: absolute;
-  right: .25rem;
-  top: 0;
-  font-size: 1.5rem;
-}
-
-.modal .modal-container .fa-xmark:hover {
-  color: var(--primary);
-}
-
-.modal .modal-container .modal-content {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.modal .main-content {
-  width: 33%;
-  height: 100%;
-}
-
-.modal .main-content img {
-  height: 100%;
-  width: 100%;
-  padding: .5rem;
-  margin-bottom: 2rem;
-}
-
-.modal .modal-description {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  width: 67%;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.modal .modal-container .modal-description h4 {
-  font-size: 1.2rem;
-}
-
-.modal .modal-container .modal-description p {
-  font-size: 1.05rem;
-  font-weight: 400;
-  line-height: 1.3rem;
-}
-
-.description-rating1,
-.description-rating2,
-.description-rating3 {
-  font-style: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--primary);
-}
-
-.description-rating1 .star5 {
-  color: var(--primary);
-}
-
-.description-price {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.description-price span {
-  font-size: 0.7rem;
-  font-weight: 100;
-  text-decoration: line-through;
-}
-
-.modal .modal-description a {
-  display: flex;
-  align-items: center;
-  width: 150px;
-  height: 50px;
-  background-color: var(--bg);
-  color: #fff;
-  padding: .5rem 0;
-  border-radius: .1rem;
-  transition: all 400ms ease-in-out;
-}
-
-.modal .modal-description a:hover {
-  box-shadow: 0 12px 12px 0px #000000df;
-  color: var(--bg);
-  background-color: var(--primary);
-  transform: scale(.95);
-}
-
-.modal .modal-description a .fa-cart-shopping {
-  position: absolute;
-  height: 40px;
-  width: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 400ms;
-}
-
-.modal .modal-description a span {
-  transform: translateX(40px);
-}
-
-.modal .modal-description a:hover .fa-cart-shopping {
-  width: 150px;
-}
-
-.modal .modal-description a:hover span {
-  transition: all 400ms;
-  opacity: 0;
-}
-
-.modal .modal-description a:focus {
-  outline: none;
-}
-
-.modal .modal-description a:active .fa-cart-shopping {
-  transform: scale(.85);
-}
-
-
