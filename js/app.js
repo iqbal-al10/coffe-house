@@ -147,7 +147,7 @@ function buatKartuProduk(produk) {
           { length: produk.hotOffer },
           () => '<i class="fa-solid fa-fire-flame-curved"></i>'
         ).join("")}</div>
-        <a href="#" onclick="tampilkanModal('${
+        <a href="#" onclick="tampilkanModal(event, '${
           produk.id
         }')" class="item-detail-button">
           <i class="fa-solid fa-eye"></i>
@@ -170,8 +170,8 @@ function buatKartuProduk(produk) {
           ).join("")}   
         </div>
         <div class="store-price">
-          Rp ${produk.harga} <span class="store-price-asli">Rp ${
-    produk.hargaAsli
+          Rp ${produk.harga.toLocaleString('id-ID')} <span class="store-price-asli">Rp ${
+    produk.hargaAsli.toLocaleString('id-ID')
   }</span>
         </div>
       </div>
@@ -180,15 +180,17 @@ function buatKartuProduk(produk) {
   return kartuProduk;
 }
 
-function tampilkanModal(id) {
+function tampilkanModal(event, id) {
+    event.preventDefault();
+
   const produk = produkData.find((item) => item.id === id);
   const modal = document.getElementById("item-detail-modal");
 
   modal.querySelector(".product-foto").src = produk.gambarSrc;
   modal.querySelector(".judul-product").textContent = produk.nama;
   modal.querySelector(".description-modal").textContent = produk.deskripsi;
-  modal.querySelector( ".description-price-promo").textContent = `Rp ${produk.harga}`;
-  modal.querySelector( ".description-price-asli").textContent = `Rp ${produk.hargaAsli}`;
+  modal.querySelector( ".description-price-promo").textContent = `Rp ${produk.harga.toLocaleString('id-ID')}`;
+  modal.querySelector( ".description-price-asli").textContent = `Rp ${produk.hargaAsli.toLocaleString('id-ID')}`;
 
   // Set rating modal
   const stars = modal.querySelectorAll(".description-rating1 i");
@@ -208,11 +210,11 @@ function tampilkanModal(id) {
 }
 
 // Close Button Modal
-function closeModal(e) {
+function closeModal(event) {
   const modal = document.getElementById("item-detail-modal");
   modal.style.display = "none";
 
-  e.preventDefault();
+  event.preventDefault();
 }
 
 // Tampilkan Container Product

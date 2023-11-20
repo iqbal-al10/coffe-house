@@ -816,13 +816,13 @@ body {
   text-decoration: line-through;
 }
 
-.store .row .store-card:hover {
+.store .container .store-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 12px #666;
   background-color: #0e0e0e;
 }
 
-.store .row:hover > .store-card:not(:hover) {
+.store .container:hover > .store-card:not(:hover) {
   filter: blur(10px);
   transform: scale(0.95);
 }
