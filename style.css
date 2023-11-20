@@ -43,6 +43,7 @@ body {
   body .navbar .logo img {
     width: 40px;
     margin-bottom: 1rem;
+    padding: .5rem 0;
     transition: 300ms;
   }
 
@@ -52,8 +53,8 @@ body {
   }
 
   .navbar .navbar-nav .navbar-menu {
-    margin: 0 0.5rem;
-    font-size: 90%;
+    margin: 0 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -70,6 +71,10 @@ body {
 
   body .modal .modal-content img {
     padding: 2.5rem 0;
+  }
+
+  .navbar .navbar-nav .navbar-menu {
+    margin: 0 .55rem;
   }
 }
 
@@ -157,7 +162,7 @@ body {
     display: block;
     padding: 0.5rem 1%;
     color: var(--bg);
-    font-size: 1.7rem;
+    font-size: 1.55rem;
   }
 
   .navbar .navbar-nav .navbar-menu::after {
@@ -194,7 +199,7 @@ body {
   }
 
   /* Product */
-  .flip-card-product .flip-card .flip-card-inner .flip-card-back .description {
+  .container-flip .flip-card .flip-card-inner .flip-card-back .description {
     color: #fff;
     font-size: 0.9rem;
     font-weight: 100;
@@ -590,20 +595,21 @@ body {
   text-align: center;
 }
 
-.product .flip-card-product {
+.product .container-flip {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem 0;
-  gap: 1rem 3rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .product .flip-card {
   background-color: inherit;
-  width: 12rem;
-  height: 15rem;
+  width: 13.5rem;
+  height: 18.5rem;
   perspective: 1000px;
-  font-family: sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .flip-card-inner {
@@ -631,7 +637,7 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid var(--primary);
+  border: 1.5px solid var(--primary);
   border-radius: 0.5rem;
 }
 
@@ -664,8 +670,11 @@ body {
   border-radius: 0.5rem;
 }
 
-.product .flip-card .flip-card-inner .flip-card-front .title {
+.product .flip-card .flip-card-inner .flip-card-front h3 {
   color: var(--primary);
+  background-color: #fff;
+  border-radius: .1rem;
+  padding: .3rem 0;
 }
 
 .product .flip-card .flip-card-inner .flip-card-front .harga {
@@ -675,8 +684,9 @@ body {
 
 .flip-card .flip-card-inner .flip-card-back .description {
   color: #fff;
-  font-size: 0.75rem;
-  font-weight: 100;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: sans-serif;
   line-height: 1.5;
   text-align: start;
 }

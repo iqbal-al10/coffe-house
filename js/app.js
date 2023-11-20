@@ -47,8 +47,137 @@ document.addEventListener("click", function (e) {
     shoppingCart.classList.remove("active");
   }
 });
+// Product Menu
+const products = [
+    {
+        nama: 'Classic Regular Coffe',
+        imgSrc: 'assets/img/regular/regular.jpg',
+        harga: 5000,
+        description: 'Classic Regular adalah kopi regular yang memadukan kekuatan kopi dengan kelembutan rasa, menciptakan minuman kopi yang dapat dinikmati setiap hari. Dipanggang dengan cermat dan dipilih dari biji kopi berkualitas, produk ini merangkul esensi kopi dalam setiap tegukan.',
+    },
+  {
+    nama: "Arabica Coffe",
+    imgSrc: "assets/img/arabika/arabica.jpeg",
+    harga: 8000,
+    description:
+      "Arabica adalah kopi istimewa yang dirancang untuk memberikan pengalaman kopi yang halus dan berkelas. Menggunakan biji kopi arabica berkualitas tinggi, kopi ini menghadirkan cita rasa yang lembut dengan sentuhan kompleksitas yang memanjakan lidah.",
+  },
+  {
+    nama: "Espresso Coffe",
+    imgSrc: "assets/img/espresso/espresso.jpeg",
+    harga: 10000,
+    description:
+      "Espresso adalah metode ekstraksi kopi yang menghasilkan minuman kopi kental dengan rasa pekat. Produk kopi espresso biasanya menggunakan biji kopi yang dipanggang lebih gelap dan digiling sangat halus.",
+  },
+  {
+    nama: "Excelsa Coffe",
+    imgSrc: "assets/img/exelsa/excelsa.jpeg",
+    harga: 10000,
+    description:
+      "Excelsa adalah kopi istimewa yang menawarkan pengalaman unik bagi pecinta kopi yang mencari keberagaman rasa. Dikenal dengan karakteristiknya yang unik, digunakan untuk menciptakan campuran yang menggoda selera dan menghadirkan kelezatan yang tak tertandingi.",
+  },
+  {
+    nama: "Latte Coffe",
+    imgSrc: "assets/img/latte/latte.jpeg",
+    harga: 10000,
+    description:
+      "Latte adalah produk kopi latte yang dirancang khusus untuk memberikan pengalaman minuman kopi yang lembut dan memanjakan lidah. Menggabungkan kopi berkualitas tinggi dengan susu yang lembut, produk ini menciptakan harmoni cita rasa yang sempurna.",
+  },
+  {
+    nama: "Liberica Coffe",
+    imgSrc: "assets/img/liberica/liberica.jpeg",
+    harga: 10000,
+    description:
+      "Liberica adalah kopi langka yang mengekspresikan keunikan varietas Liberica, menghadirkan pengalaman kopi yang eksotis dan berbeda. Dipanen dengan hati-hati dari perkebunan pilihan, biji kopi ini menciptakan minuman kopi yang menggoda dan memikat dengan karakteristik khasnya.",
+  },
+  {
+    nama: "Robusta Coffe",
+    imgSrc: "assets/img/robusta/robusta.jpeg",
+    harga: 7000,
+    description:
+      "Robusta adalah kopi yang dibuat khusus untuk pecinta kopi yang menghargai kekuatan dan karakter yang tegas. Kopi ini menghadirkan kekentalan yang kuat dan cita rasa yang berani, membuatnya menjadi pilihan ideal bagi kalian yang mencari pengalaman kopi yang mendalam.",
+  },
+  {
+    nama: "Luwak Coffe",
+    imgSrc: "assets/img/luwak/luwak.jpeg",
+    harga: 20000,
+    description:
+      "Kopi Luwak, atau dikenal juga sebagai kopi musang, adalah kopi yang dihasilkan oleh musang melalui fermentasi alami dalam pencernaan mereka. Proses unik ini memberikan rasa kopi yang istimewa dan kompleks.",
+  },
+  {
+    nama: 'Machiato Coffe',
+    imgSrc: 'assets/img/machiato/machiato.jpeg',
+    harga: 12000,
+    description: 'Macchiato adalah produk kopi macchiato yang merayakan harmoni antara kekuatan kopi dan kelembutan susu. Dengan cermat diciptakan untuk memberikan pengalaman minuman kopi yang seimbang, menghadirkan cita rasa yang kuat namun tetap mempertahankan sentuhan kelembutan yang memikat.',
+  },
+  {
+    nama: 'Cold Brew',
+    imgSrc: 'assets/img/coldbrew/cold-brew.jpeg',
+    harga: 20000,
+    description: 'Cold Brew adalah produk kopi khusus yang mengekspresikan kelezatan dan keaslian kopi yang diseduh secara dingin. Diproses dengan hati-hati untuk menghasilkan minuman kopi yang menyegarkan dan memuaskan, Arctic Chill memberikan pengalaman Cold Brew yang luar biasa.',
+  }
+];
 
-// Modal Box
+function createProductElement(product) {
+  const flipCard = document.createElement("div");
+  flipCard.classList.add("flip-card");
+
+  const flipCardInner = document.createElement("div");
+  flipCardInner.classList.add("flip-card-inner");
+
+  const flipCardFront = document.createElement("div");
+  flipCardFront.classList.add("flip-card-front");
+
+  const img = document.createElement("img");
+  img.classList.add("product-img");
+  img.src = product.imgSrc;
+  img.alt = product.nama;
+
+  const title = document.createElement("h3");
+  title.classList.add("title");
+  title.textContent = `${product.nama}`;
+
+  const harga = document.createElement("h6");
+  harga.classList.add("harga");
+  harga.textContent = `Rp ${product.harga.toLocaleString("id-ID")}`;
+
+  flipCardFront.appendChild(img);
+  flipCardFront.appendChild(title);
+  flipCardFront.appendChild(harga);
+
+  const flipCardBack = document.createElement("div");
+  flipCardBack.classList.add("flip-card-back");
+
+  const description = document.createElement("p");
+  description.classList.add("description");
+  description.textContent = product.description;
+
+  const buyButton = document.createElement("button");
+  buyButton.innerHTML = '<a href="#">Buy</a>';
+
+  flipCardBack.appendChild(description);
+  flipCardBack.appendChild(buyButton);
+
+  flipCardInner.appendChild(flipCardFront);
+  flipCardInner.appendChild(flipCardBack);
+
+  flipCard.appendChild(flipCardInner);
+
+  return flipCard;
+}
+
+function renderProducts() {
+  const flipContainer = document.getElementById("flip-container");
+
+  products.forEach((product) => {
+    const productElement = createProductElement(product);
+    flipContainer.appendChild(productElement);
+  });
+}
+
+renderProducts();
+
+// Store Card & Modal Box
 const produkData = [
   {
     id: "store-card1",
@@ -170,9 +299,11 @@ function buatKartuProduk(produk) {
           ).join("")}   
         </div>
         <div class="store-price">
-          Rp ${produk.harga.toLocaleString('id-ID')} <span class="store-price-asli">Rp ${
-    produk.hargaAsli.toLocaleString('id-ID')
-  }</span>
+          Rp ${produk.harga.toLocaleString(
+            "id-ID"
+          )} <span class="store-price-asli">Rp ${produk.hargaAsli.toLocaleString(
+    "id-ID"
+  )}</span>
         </div>
       </div>
     `;
@@ -180,8 +311,9 @@ function buatKartuProduk(produk) {
   return kartuProduk;
 }
 
+//Modal Box
 function tampilkanModal(event, id) {
-    event.preventDefault();
+  event.preventDefault();
 
   const produk = produkData.find((item) => item.id === id);
   const modal = document.getElementById("item-detail-modal");
@@ -189,8 +321,12 @@ function tampilkanModal(event, id) {
   modal.querySelector(".product-foto").src = produk.gambarSrc;
   modal.querySelector(".judul-product").textContent = produk.nama;
   modal.querySelector(".description-modal").textContent = produk.deskripsi;
-  modal.querySelector( ".description-price-promo").textContent = `Rp ${produk.harga.toLocaleString('id-ID')}`;
-  modal.querySelector( ".description-price-asli").textContent = `Rp ${produk.hargaAsli.toLocaleString('id-ID')}`;
+  modal.querySelector(
+    ".description-price-promo"
+  ).textContent = `Rp ${produk.harga.toLocaleString("id-ID")}`;
+  modal.querySelector(
+    ".description-price-asli"
+  ).textContent = `Rp ${produk.hargaAsli.toLocaleString("id-ID")}`;
 
   // Set rating modal
   const stars = modal.querySelectorAll(".description-rating1 i");
@@ -202,8 +338,8 @@ function tampilkanModal(event, id) {
   modal.style.display = "flex";
 
   // Close di luar area modal dan button close
-  window.onclick = (e) => {
-    if (e.target === modal) {
+  window.onclick = (event) => {
+    if (event.target === modal) {
       modal.style.display = "none";
     }
   };
@@ -228,7 +364,6 @@ function tampilkanKartuProduk() {
 }
 
 tampilkanKartuProduk();
-
 
 // const itemDetailModal = document.querySelector("#item-detail-modal");
 // const itemDetailButtons = document.querySelectorAll(".item-detail-button");
