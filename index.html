@@ -61,31 +61,17 @@
         </a>
 
         <a id="cart-shopping-button" href="#"
-          ><i class="fa-solid fa-cart-shopping"></i
-        ></a>
+          ><i class="fa-solid fa-cart-shopping">
+            </i
+        >
+      <span class="notify-cart">0</span></a>
         <a id="menu-bars" class="menu-bars" href="#"
           ><i class="fa-solid fa-bars"></i
         ></a>
       </div>
       <!-- Shopping Cart Start -->
-      <div class="shopping-cart">
-        <div class="cart-item">
-          <img src="assets/img/regular/regular-beans.jpeg" alt="Product 1" />
-          <div class="item-detail">
-            <h5>Arabica Beans</h5>
-            <div class="item-price">Rp 44.000</div>
-          </div>
-          <i class="remove-item fa-regular fa-trash-can"></i>
-        </div>
-
-        <div class="cart-item">
-          <img src="assets/img/regular/regular-beans.jpeg" alt="Product 1" />
-          <div class="item-detail">
-            <h5>Product 1</h5>
-            <div class="item-price">Rp 44.000</div>
-          </div>
-          <i class="remove-item fa-regular fa-trash-can"></i>
-        </div>
+      <div class="shopping-cart" id="cart-container">
+        <!-- Data Diisi Di JS -->
       </div>
 
       <!-- Shopping Cart End -->
@@ -253,12 +239,14 @@
               <p class="description-price-promo"></p>
               <span class="description-price-asli"></span>
             </div>
-            <a href=""><i class="fa-solid fa-cart-shopping"></i><span>Add to cart</span></a>
+<a href="#" onclick="addToCartFromModal(this)" class="add-to-cart-button" data-product-id="${produk.id}">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span>Add to cart</span>
+</a>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Modal Box Item detail End -->
 
     <!-- JS -->

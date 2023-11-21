@@ -396,6 +396,21 @@ body {
 }
 
 /* Shopping Cart */
+/* #cart-shopping-button {
+  position: relative;
+}
+
+#cart-shopping-button span {
+  display: inline-block;
+  padding: .3rem .5rem;
+  border-radius: 50%;
+  font-size: .75rem;
+  background-color: red;
+  position: absolute;
+  top: -12px;
+  right: -14px;
+} */
+
 .shopping-cart {
   position: absolute;
   top: 100%;
@@ -417,7 +432,7 @@ body {
   margin: 2rem 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px dashed #666;
   position: relative;
@@ -428,17 +443,55 @@ body {
   border-radius: 0.1rem;
 }
 
-.shopping-cart h5 {
+.shopping-cart .item-detail {
+  border: 1px solid red;
+}
+
+.shopping-cart h6 {
   font-size: 1rem;
   padding-bottom: 1rem;
 }
 
-.shopping-cart .item-price {
-  font-size: 0.9rem;
+.shopping-cart .fa-x {
+  font-size: .8rem;
   color: var(--bg);
 }
 
-.shopping-cart .remove-item {
+.shopping-cart .item-price {
+  font-weight: 600;
+  margin-right: .4rem;
+  color: var(--bg);
+}
+
+.shopping-cart #total-item {
+  margin: 0 .4rem;
+  font-size: 1.1rem;
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.shopping-cart #remove ,
+.shopping-cart #add {
+  display: inline-block;
+  color: var(--bg);
+  background-color: #dededeee;
+  padding: .15rem .3rem;
+  cursor: pointer;
+  margin-right: .4rem;
+  font-size: .95rem;
+  font-weight: 600;
+  border-radius: .1rem;
+}
+
+.shopping-cart #total-harga {
+  margin-left: .2rem;
+  color: var(--bg);
+  background-color: #dededeee;
+  padding: .075rem .15rem;
+  font-weight: 600;
+}
+
+.shopping-cart #delete-item {
   position: absolute;
   right: 0;
   bottom: 1rem;
@@ -446,11 +499,39 @@ body {
   color: var(--bg);
 }
 
-.shopping-cart .remove-item:hover {
+.shopping-cart #delete-item:hover {
   color: var(--primary);
   transition: 200ms;
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
+}
+
+.bottom-info {
+  display: flex;
+  position: fixed;
+  width: 30%;
+  bottom: 0;
+  padding: .5rem 0 .25rem 0;
+  background-color: #000000;
+  border-radius: .1rem;
+}
+
+.bottom-info #total-semua-harga {
+  width: 15rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: #fff;
+  background-color: inherit;
+}
+
+.bottom-info button {
+  text-align: center;
+  width: 10rem;
+  padding: 1rem 0;
+  background-color: #666;
+  color: #fff;
+  cursor: pointer;
+  border-radius: .1rem;
 }
 
 /* HERO SECTION */
@@ -548,10 +629,17 @@ body {
 
 .about .row .about-img {
   flex: 1 1 45rem;
+  overflow: hidden;
 }
 
 .about .row .about-img img {
   width: 100%;
+  transition: 300ms ease-in-out;
+}
+
+.about .row .about-img img:hover {
+  transform: scale(1.1);
+  transition: 300ms;
 }
 
 .about .row article {
@@ -699,11 +787,12 @@ body {
   height: 2rem;
   border-radius: 0.25rem;
   font-size: 0.75rem;
+  color: red;
   font-weight: 800;
   border: 0.1rem solid #fff;
 }
 
-.flip-card .flip-card-inner .flip-card-back button a {
+.flip-card .flip-card-inner .flip-card-back button span {
   position: relative;
   display: flex;
   justify-content: center;
@@ -719,7 +808,7 @@ body {
   box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
-.flip-card .flip-card-inner .flip-card-back button a:hover {
+.flip-card .flip-card-inner .flip-card-back button span:hover {
   transition: all 0.5s;
   transform: translate(0, 0.4em);
   box-shadow: 0 0 0 0 #fff;
