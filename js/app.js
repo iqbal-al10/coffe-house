@@ -54,88 +54,88 @@ const products = [
     {   
         id: 1,
         nama: 'Classic Regular Coffe',
-        imgSrc: 'assets/img/regular/regular.jpg',
+        gambarSrc: 'assets/img/regular/regular.jpg',
         harga: 5000,
-        description: 'Classic Regular adalah kopi regular yang memadukan kekuatan kopi dengan kelembutan rasa, menciptakan minuman kopi yang dapat dinikmati setiap hari. Dipanggang dengan cermat dan dipilih dari biji kopi berkualitas, produk ini merangkul esensi kopi dalam setiap tegukan.',
+        deskripsi: 'Classic Regular adalah kopi regular yang memadukan kekuatan kopi dengan kelembutan rasa, menciptakan minuman kopi yang dapat dinikmati setiap hari. Dipanggang dengan cermat dan dipilih dari biji kopi berkualitas, produk ini merangkul esensi kopi dalam setiap tegukan.',
     },
     // Product2
   {
     id: 2,
     nama: "Arabica Coffe",
-    imgSrc: "assets/img/arabika/arabica.jpeg",
+    gambarSrc: "assets/img/arabika/arabica.jpeg",
     harga: 8000,
-    description:
+    deskripsi:
       "Arabica adalah kopi istimewa yang dirancang untuk memberikan pengalaman kopi yang halus dan berkelas. Menggunakan biji kopi arabica berkualitas tinggi, kopi ini menghadirkan cita rasa yang lembut dengan sentuhan kompleksitas yang memanjakan lidah.",
   },
 //   Product3
   {
     id: 3,
     nama: "Espresso Coffe",
-    imgSrc: "assets/img/espresso/espresso.jpeg",
+    gambarSrc: "assets/img/espresso/espresso.jpeg",
     harga: 10000,
-    description:
+    deskripsi:
       "Espresso adalah metode ekstraksi kopi yang menghasilkan minuman kopi kental dengan rasa pekat. Produk kopi espresso biasanya menggunakan biji kopi yang dipanggang lebih gelap dan digiling sangat halus.",
   },
 //   Product4
   {
     id: 4,
     nama: "Excelsa Coffe",
-    imgSrc: "assets/img/exelsa/excelsa.jpeg",
+    gambarSrc: "assets/img/exelsa/excelsa.jpeg",
     harga: 10000,
-    description:
+    deskripsi:
       "Excelsa adalah kopi istimewa yang menawarkan pengalaman unik bagi pecinta kopi yang mencari keberagaman rasa. Dikenal dengan karakteristiknya yang unik, digunakan untuk menciptakan campuran yang menggoda selera dan menghadirkan kelezatan yang tak tertandingi.",
   },
 //   Product5
   {
     id: 5,
     nama: "Latte Coffe",
-    imgSrc: "assets/img/latte/latte.jpeg",
+    gambarSrc: "assets/img/latte/latte.jpeg",
     harga: 10000,
-    description:
+    deskripsi:
       "Latte adalah produk kopi latte yang dirancang khusus untuk memberikan pengalaman minuman kopi yang lembut dan memanjakan lidah. Menggabungkan kopi berkualitas tinggi dengan susu yang lembut, produk ini menciptakan harmoni cita rasa yang sempurna.",
   },
 //   Product6
   {
     id: 6,
     nama: "Liberica Coffe",
-    imgSrc: "assets/img/liberica/liberica.jpeg",
+    gambarSrc: "assets/img/liberica/liberica.jpeg",
     harga: 10000,
-    description:
+    deskripsi:
       "Liberica adalah kopi langka yang mengekspresikan keunikan varietas Liberica, menghadirkan pengalaman kopi yang eksotis dan berbeda. Dipanen dengan hati-hati dari perkebunan pilihan, biji kopi ini menciptakan minuman kopi yang menggoda dan memikat dengan karakteristik khasnya.",
   },
 //   Product7
   {
     id: 7,
     nama: "Robusta Coffe",
-    imgSrc: "assets/img/robusta/robusta.jpeg",
+    gambarSrc: "assets/img/robusta/robusta.jpeg",
     harga: 7000,
-    description:
+    deskripsi:
       "Robusta adalah kopi yang dibuat khusus untuk pecinta kopi yang menghargai kekuatan dan karakter yang tegas. Kopi ini menghadirkan kekentalan yang kuat dan cita rasa yang berani, membuatnya menjadi pilihan ideal bagi kalian yang mencari pengalaman kopi yang mendalam.",
   },
 //   Product8
   {
     id: 8,
     nama: "Luwak Coffe",
-    imgSrc: "assets/img/luwak/luwak.jpeg",
+    gambarSrc: "assets/img/luwak/luwak.jpeg",
     harga: 20000,
-    description:
+    deskripsi:
       "Kopi Luwak, atau dikenal juga sebagai kopi musang, adalah kopi yang dihasilkan oleh musang melalui fermentasi alami dalam pencernaan mereka. Proses unik ini memberikan rasa kopi yang istimewa dan kompleks.",
   },
 //   Product9
   {
     id: 9,
     nama: 'Machiato Coffe',
-    imgSrc: 'assets/img/machiato/machiato.jpeg',
+    gambarSrc: 'assets/img/machiato/machiato.jpeg',
     harga: 12000,
-    description: 'Macchiato adalah produk kopi macchiato yang merayakan harmoni antara kekuatan kopi dan kelembutan susu. Dengan cermat diciptakan untuk memberikan pengalaman minuman kopi yang seimbang, menghadirkan cita rasa yang kuat namun tetap mempertahankan sentuhan kelembutan yang memikat.',
+    deskripsi: 'Macchiato adalah produk kopi macchiato yang merayakan harmoni antara kekuatan kopi dan kelembutan susu. Dengan cermat diciptakan untuk memberikan pengalaman minuman kopi yang seimbang, menghadirkan cita rasa yang kuat namun tetap mempertahankan sentuhan kelembutan yang memikat.',
   },
 //   Product10
   {
     id: 10,
     nama: 'Cold Brew',
-    imgSrc: 'assets/img/coldbrew/cold-brew.jpeg',
+    gambarSrc: 'assets/img/coldbrew/cold-brew.jpeg',
     harga: 20000,
-    description: 'Cold Brew adalah produk kopi khusus yang mengekspresikan kelezatan dan keaslian kopi yang diseduh secara dingin. Diproses dengan hati-hati untuk menghasilkan minuman kopi yang menyegarkan dan memuaskan, Arctic Chill memberikan pengalaman Cold Brew yang luar biasa.',
+    deskripsi: 'Cold Brew adalah produk kopi khusus yang mengekspresikan kelezatan dan keaslian kopi yang diseduh secara dingin. Diproses dengan hati-hati untuk menghasilkan minuman kopi yang menyegarkan dan memuaskan, Arctic Chill memberikan pengalaman Cold Brew yang luar biasa.',
   }
 ];
 
@@ -149,6 +149,45 @@ const rupiah = (number) => {
 };
 // 
 
+const cartItems = [];
+
+// Fungsi untuk menambahkan produk ke dalam keranjang
+function addToCart(product) {
+  // Temukan apakah produk sudah ada di dalam keranjang
+  const existingItem = cartItems.find((item) => item.id === product.id);
+
+  // Jika produk sudah ada, tingkatkan jumlahnya
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    // Jika produk belum ada, tambahkan ke dalam keranjang
+    cartItems.push({
+      id: product.id,
+      nama: product.nama,
+      harga: product.harga,
+      quantity: 1,
+    });
+  }
+
+  // Panggil fungsi untuk memperbarui tampilan keranjang
+  updateCartTotal();
+}
+
+
+// Fungsi untuk memperbarui tampilan keranjang
+function updateCartTotal() {
+  setTimeout(() => {
+    saveCartToLocalStorage();
+  }, 100);
+}
+
+// Fungsi untuk menyimpan keranjang ke dalam localStorage
+function saveCartToLocalStorage() {
+  // Implementasi logika penyimpanan ke localStorage
+  // ...
+}
+
+// 
 function createProductElement(product) {
   const flipCard = document.createElement("div");
   flipCard.classList.add("flip-card");
@@ -161,7 +200,7 @@ function createProductElement(product) {
 
   const img = document.createElement("img");
   img.classList.add("product-img");
-  img.src = product.imgSrc;
+  img.src = product.gambarSrc; // Ganti imgSrc menjadi gambarSrc
   img.alt = product.nama;
 
   const title = document.createElement("h3");
@@ -181,11 +220,11 @@ function createProductElement(product) {
 
   const description = document.createElement("p");
   description.classList.add("description");
-  description.textContent = product.description;
+  description.textContent = product.deskripsi; // Ganti description menjadi deskripsi
 
   const buyButton = document.createElement("button");
-buyButton.innerHTML = '<a href="#" onclick="addToCart(products)">Buy Now</a>';
-
+  buyButton.addEventListener("click", () => addToCart(product.id));
+  buyButton.textContent = "Buy Now";
 
   flipCardBack.appendChild(description);
   flipCardBack.appendChild(buyButton);
@@ -208,6 +247,7 @@ function renderProducts() {
 }
 
 renderProducts();
+
 
 // Store Card & Modal Box
 const produkData = [
@@ -312,7 +352,7 @@ const produkData = [
   
     kartuProduk.innerHTML = `
         <div class="store-icons">
-          <a href="#" onclick="addToCart('${produk.id}')"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="#" onclick="addToCart('${produk.id}', event)"><i class="fa-solid fa-cart-shopping"></i></a>
           <div class="hot-offer">${Array.from(
             { length: produk.hotOffer },
             () => '<i class="fa-solid fa-fire-flame-curved"></i>'
@@ -342,10 +382,13 @@ const produkData = [
 
 //Modal Box
 // Fungsi addToCartFromModal ditempatkan di luar fungsi tampilkanModal
-function addToCartFromModal(button) {
-    const productId = button.getAttribute("data-product-id");
-    addToCart(productId);
+function addToCartFromModal(element) {
+  console.log("Adding to cart from modal");
+  const productId = element.getAttribute("data-product-id");
+  addToCart(productId);
+  updateCartNotification();
 }
+
 
 function tampilkanModal(event, id) {
     event.preventDefault();
@@ -401,57 +444,71 @@ function tampilkanKartuProduk() {
   });
 }
 
-function addToCart(productId) {
-    const selectedProduct = produkData.find((product) => product.id === productId);
-    const cartContainer = document.getElementById("cart-container");
-  
-    const existingCartItem = cartContainer.querySelector(`.cart-item[data-product-id="${selectedProduct.id}"]`);
-  
-    if (existingCartItem) {
-      const totalItemElement = existingCartItem.querySelector(".total-item");
-      let totalItem = parseInt(totalItemElement.textContent);
-      totalItem += 1;
-      totalItemElement.textContent = totalItem;
-  
-      const totalHargaElement = existingCartItem.querySelector(".total-harga");
-      let hargaPerItem = parseInt(existingCartItem.getAttribute("data-harga"));
-      let totalHarga = hargaPerItem * totalItem;
-      totalHargaElement.textContent = rupiah(totalHarga);
-    } else {
-      const cartItem = document.createElement("div");
-      cartItem.classList.add("cart-item");
-      cartItem.setAttribute("data-product-id", selectedProduct.id);
-      cartItem.setAttribute("data-harga", selectedProduct.harga); // tambahkan ini
-  
-      cartItem.innerHTML = `
+
+function addToCart(productId, event) {
+  // Menghentikan default behavior dari event jika ada
+  if (event) {
+      event.preventDefault();
+  }
+
+  // Menemukan produk yang sesuai dengan ID yang diberikan
+  const selectedProduct = produkData.find((product) => product.id === productId);
+
+  // Memanggil fungsi untuk menambahkan item ke keranjang
+  tambahkanItemKeKeranjang(selectedProduct);
+
+  // Memanggil fungsi untuk memperbarui total belanja
+  updateCartNotification();
+  updateCartTotal();
+}
+
+function tambahkanItemKeKeranjang(selectedProduct) {
+  // Mengambil elemen keranjang
+  const cartContainer = document.getElementById("cart-container");
+
+  // Mencari item yang sudah ada dalam keranjang berdasarkan ID produk
+  const existingCartItem = cartContainer.querySelector(`.cart-item[data-product-id="${selectedProduct.id}"]`);
+
+  // Logika untuk menangani item yang sudah ada dalam keranjang
+  if (existingCartItem) {
+    const totalItemElement = existingCartItem.querySelector(".total-item");
+    let totalItem = parseInt(totalItemElement.textContent);
+    totalItem += 1;
+    totalItemElement.textContent = totalItem;
+
+    const totalHargaElement = existingCartItem.querySelector(".total-harga");
+    let hargaPerItem = parseInt(existingCartItem.getAttribute("data-harga"));
+    let totalHarga = hargaPerItem * totalItem;
+    totalHargaElement.textContent = rupiah(totalHarga);
+  } else {
+    // Logika untuk menangani item yang belum ada dalam keranjang
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+    cartItem.setAttribute("data-product-id", selectedProduct.id);
+    cartItem.setAttribute("data-harga", selectedProduct.harga);
+
+    cartItem.innerHTML = `
         <img src="${selectedProduct.gambarSrc}" alt="${selectedProduct.nama}" />
         <div class="item-detail">
-          <h6 class="nama-products">${selectedProduct.nama}</h6>
-          <span class="item-price">${rupiah(selectedProduct.harga)}</span>
-          <i class="fa-solid fa-x"></i>
-          <span class="total-item">1</span>
-          <button class="remove" onclick="removeFromCart('${selectedProduct.id}')">
-            <i class="fa-solid fa-minus"></i>
-          </button>
-          <button class="add" onclick="addToCart('${selectedProduct.id}')">
-            <i class="fa-solid fa-plus"></i>
-          </button>
-          <i class="fa-solid fa-equals"></i>
-          <span class="total-harga">${rupiah(selectedProduct.harga)}</span>
+            <h6 class="nama-products">${selectedProduct.nama}</h6>
+            <span class="item-price">${rupiah(selectedProduct.harga)}</span>
+            <i class="fa-solid fa-x"></i>
+            <span class="total-item">1</span>
+            <button class="remove" onclick="removeFromCart('${selectedProduct.id}', event)">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+            <button class="add" onclick="addToCart('${selectedProduct.id}', event)">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <i class="fa-solid fa-equals"></i>
+            <span class="total-harga">${rupiah(selectedProduct.harga)}</span>
         </div>
         <i class="fa-solid fa-trash" onclick="deleteItem('${selectedProduct.id}')"></i>
-        <div class="bottom-info">
-          <span id="total-semua-harga">0</span>
-          <button type="submit">Checkout</button>
-        </div>
-      `;
-  
-      cartContainer.appendChild(cartItem);
-    }
-  
-    updateCartTotal();
+    `;
+    cartContainer.appendChild(cartItem);
   }
-  
+}
+
   
 function removeFromCart(productId) {
   const cartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
@@ -472,6 +529,7 @@ function removeFromCart(productId) {
       cartItem.remove();
     }
 
+    updateCartNotification();
     updateCartTotal();
   }
 }
@@ -481,35 +539,71 @@ function deleteItem(productId) {
   const cartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
   if (cartItem) {
     cartItem.remove();
+    updateCartNotification();
     updateCartTotal();
   }
 }
 
 function updateCartTotal() {
-    const cartItems = document.querySelectorAll(".cart-item");
-  
-    let totalHarga = 0;
-    let totalItem = 0;
-    let totalSemuaHarga = 0;
-  
-    cartItems.forEach((item) => {
+  const cartItems = document.querySelectorAll(".cart-item");
+  let totalHarga = 0;
+  let totalItem = 0;
+  let produkTypeTotal = {};
+
+  cartItems.forEach((item) => {
       const hargaPerItem = parseInt(item.getAttribute("data-harga"));
       const jumlahItem = parseInt(item.querySelector(".total-item").textContent);
       const totalHargaItem = hargaPerItem * jumlahItem;
-  
+
       totalHarga += totalHargaItem;
       totalItem += jumlahItem;
-      totalSemuaHarga += totalHargaItem;
-    });
-  
-    const totalSemuaHargaElement = document.getElementById("total-semua-harga");
-    totalSemuaHargaElement.textContent = rupiah(totalSemuaHarga);
-    document.getElementById("total-harga").textContent = rupiah(totalHarga);
-    document.getElementById("total-item").textContent = totalItem;
-  
-    saveCartToLocalStorage();
+
+      const productId = item.getAttribute("data-product-id");
+      if (!(productId in produkTypeTotal)) {
+          produkTypeTotal[productId] = 0;
+      }
+      produkTypeTotal[productId] += totalHargaItem;
+  });
+
+  let totalSemuaHarga = 0;
+
+  for (const key in produkTypeTotal) {
+      totalSemuaHarga += produkTypeTotal[key];
   }
-  
+
+  const totalSemuaHargaElement = document.getElementById("total-semua-harga");
+if (totalSemuaHargaElement) {
+    totalSemuaHargaElement.textContent = rupiah(totalSemuaHarga);
+}
+
+
+  const totalHargaElement = document.getElementById("total-harga");
+  totalHargaElement.textContent = rupiah(totalHarga);
+
+  const totalItemElement = document.getElementById("total-item");
+  totalItemElement.textContent = totalItem;
+
+  // Log untuk debugging
+  console.log("produkTypeTotal:", produkTypeTotal);
+  console.log("Total Semua Harga:", totalSemuaHarga);
+
+  // Menunda penyimpanan ke localStorage menggunakan setTimeout
+  setTimeout(() => {
+      saveCartToLocalStorage();
+  }, 100);
+}
+
+const notifyCart = document.getElementById("notify-cart");
+
+// Notify Cart
+function updateCartNotification() {
+  const cartItems = document.querySelectorAll(".cart-item");
+
+  if (notifyCart) {
+    notifyCart.textContent = cartItems.length;
+  }
+}
+
 
 function saveCartToLocalStorage() {
   const cartItems = document.querySelectorAll(".cart-item");
@@ -536,10 +630,8 @@ function loadCartFromLocalStorage() {
       }
     }
   });
+  updateCartNotification();
 }
-
-// NOtif Ketika Button addToCart di klik
-
 
 function checkout() {
   alert("Terima kasih telah berbelanja! Pesanan Anda sedang diproses.");
@@ -551,4 +643,8 @@ tampilkanKartuProduk();
 
 // Memuat keranjang dari local storage saat halaman dimuat ulang
 loadCartFromLocalStorage();
+
+// Memanggil fungsi untuk memperbarui tampilan penghitung keranjang
+updateCartNotification();
+
 
