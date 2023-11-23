@@ -222,12 +222,12 @@ function createProductElement(product) {
   description.classList.add("description");
   description.textContent = product.deskripsi; // Ganti description menjadi deskripsi
 
-  const buyButton = document.createElement("button");
-  buyButton.addEventListener("click", () => addToCart(product.id));
-  buyButton.textContent = "Buy Now";
+  const fyi = document.createElement("h5");
+  fyi.classList.add("fyi")
+  fyi.textContent = "Menu Ini Hanya Bisa Di Beli Di Offline Store!";
 
   flipCardBack.appendChild(description);
-  flipCardBack.appendChild(buyButton);
+  flipCardBack.appendChild(fyi);
 
   flipCardInner.appendChild(flipCardFront);
   flipCardInner.appendChild(flipCardBack);
@@ -444,30 +444,74 @@ function tampilkanKartuProduk() {
   });
 }
 
+const notifyCart = document.getElementById("notify-cart");
 
-function addToCart(productId, event) {
-  // Menghentikan default behavior dari event jika ada
-  if (event) {
-      event.preventDefault();
+// Notifikasi Keranjang
+function updateCartNotification() {
+  const cartItems = document.querySelectorAll(".cart-item");
+
+  if (notifyCart) {
+    notifyCart.textContent = cartItems.length;
   }
 
-  // Menemukan produk yang sesuai dengan ID yang diberikan
-  const selectedProduct = produkData.find((product) => product.id === productId);
-
-  // Memanggil fungsi untuk menambahkan item ke keranjang
-  tambahkanItemKeKeranjang(selectedProduct);
-
-  // Memanggil fungsi untuk memperbarui total belanja
-  updateCartNotification();
-  updateCartTotal();
+  // Atur properti tampilan berdasarkan panjang cartItems
+  notifyCart.style.display = cartItems.length > 0 ? "flex" : "none";
 }
 
-function tambahkanItemKeKeranjang(selectedProduct) {
+// Tombol addToCart
+function addToCart(productId, event) {
+  // Menghentikan perilaku default dari event jika ada
+  if (event) {
+    event.preventDefault();
+  }
+
+  console.log("Tombol diklik!");
+
+  // Temukan produk yang sesuai dengan ID yang diberikan
+  const selectedProduct = produkData.find((product) => product.id === productId);
+
+  // Panggil fungsi untuk menambahkan item ke keranjang
+  tambahkanItemKeKeranjang(selectedProduct);
+
+  // Panggil fungsi untuk memperbarui notifikasi keranjang
+  updateCartNotification();
+  updateCartTotal();
+
+  // Tentukan apakah keranjang kosong atau tidak
+  const cartContainer = document.getElementById("cart-container");
+  const informationElement = cartContainer.querySelector('.information');
+  const bottomInfoElement = cartContainer.querySelector('.bottom-info');
+
+  if (informationElement && bottomInfoElement) {
+    const cartItems = cartContainer.getElementsByClassName('cart-item');
+
+    if (cartItems.length === 0) {
+      // Jika keranjang kosong, tampilkan elemen kosong dan sembunyikan bottomInfo
+      informationElement.style.display = "flex";
+      bottomInfoElement.style.display = "none";
+    } else {
+      // Jika ada barang di keranjang, sembunyikan elemen kosong dan tampilkan bottomInfo
+      informationElement.style.display = "none";
+      bottomInfoElement.style.display = "flex";
+    }
+  }
+  // Tambahkan teks notifikasi ke dalam elemen notifyCart
+  notifyCart.textContent = "halo";
+}
+
+
+
+
+
+function tambahkanItemKeKeranjang(selectedProduct, event) {
   // Mengambil elemen keranjang
   const cartContainer = document.getElementById("cart-container");
 
   // Mencari item yang sudah ada dalam keranjang berdasarkan ID produk
   const existingCartItem = cartContainer.querySelector(`.cart-item[data-product-id="${selectedProduct.id}"]`);
+
+  // Mendeklarasikan informationElement di luar blok if
+  let informationElement = cartContainer.querySelector('.information');
 
   // Logika untuk menangani item yang sudah ada dalam keranjang
   if (existingCartItem) {
@@ -490,24 +534,31 @@ function tambahkanItemKeKeranjang(selectedProduct) {
     cartItem.innerHTML = `
         <img src="${selectedProduct.gambarSrc}" alt="${selectedProduct.nama}" />
         <div class="item-detail">
+          <div class="nama-dan-harga">
             <h6 class="nama-products">${selectedProduct.nama}</h6>
             <span class="item-price">${rupiah(selectedProduct.harga)}</span>
-            <i class="fa-solid fa-x"></i>
-            <span class="total-item">1</span>
+          </div>
+          <div class="item-lainlain">
             <button class="remove" onclick="removeFromCart('${selectedProduct.id}', event)">
                 <i class="fa-solid fa-minus"></i>
             </button>
+            <span class="total-item">1</span>
             <button class="add" onclick="addToCart('${selectedProduct.id}', event)">
                 <i class="fa-solid fa-plus"></i>
             </button>
             <i class="fa-solid fa-equals"></i>
             <span class="total-harga">${rupiah(selectedProduct.harga)}</span>
+            <i class="fa-solid fa-trash" onclick="deleteItem('${selectedProduct.id}')"></i>
+            </div>
         </div>
-        <i class="fa-solid fa-trash" onclick="deleteItem('${selectedProduct.id}')"></i>
     `;
     cartContainer.appendChild(cartItem);
+
+    informationElement.textContent = "\u2015 Happy Shopping \u2015";
+    cartContainer.querySelector('.bottom-info').style.display = 'flex';
   }
 }
+
 
   
 function removeFromCart(productId) {
@@ -592,18 +643,6 @@ if (totalSemuaHargaElement) {
       saveCartToLocalStorage();
   }, 100);
 }
-
-const notifyCart = document.getElementById("notify-cart");
-
-// Notify Cart
-function updateCartNotification() {
-  const cartItems = document.querySelectorAll(".cart-item");
-
-  if (notifyCart) {
-    notifyCart.textContent = cartItems.length;
-  }
-}
-
 
 function saveCartToLocalStorage() {
   const cartItems = document.querySelectorAll(".cart-item");
