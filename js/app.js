@@ -220,7 +220,7 @@ function createProductElement(product) {
 
   const description = document.createElement("p");
   description.classList.add("description");
-  description.textContent = product.deskripsi; // Ganti description menjadi deskripsi
+  description.textContent = product.deskripsi;
 
   const fyi = document.createElement("h5");
   fyi.classList.add("fyi")
@@ -255,7 +255,7 @@ const produkData = [
   {
     id: "store-card1",
     hotOffer: 1,
-    nama: "> Regular Beans <",
+    nama: "Regular Beans",
     deskripsi:
       "Biji kopi regular kami adalah pencapaian sempurna dari klasik yang tak ternilai. Dipilih dari sumber-sumber terbaik di berbagai wilayah penghasil kopi, biji kopi ini mewakili dedikasi kami untuk memberikan pengalaman kopi yang istimewa dan autentik.",
     harga: 44000,
@@ -267,7 +267,7 @@ const produkData = [
   {
     id: "store-card2",
     hotOffer: 1,
-    nama: "> Espresso Beans <",
+    nama: "Espresso Beans",
     deskripsi:
       "Biji espresso kami dihasilkan dari biji kopi berkualitas tinggi yang dipetik secara teliti dari kebun kopi terbaik. Diproses dengan cermat, biji espresso kami menawarkan pengalaman kopi yang unik dan memuaskan bagi para penikmat kopi sejati.",
     harga: 55000,
@@ -279,7 +279,7 @@ const produkData = [
   {
     id: "store-card3",
     hotOffer: 1,
-    nama: "> Luwak Beans <",
+    nama: "Luwak Beans",
     deskripsi:
       "Biji kopi Luwak kami adalah kopi mewah yang dihasilkan melalui proses unik yang melibatkan musang atau luwak. Biji kopi ini menjadi istimewa karena melalui proses fermentasi alami dalam pencernaan musang, memberikan profil rasa yang sangat istimewa dan kompleks.",
     harga: 69000,
@@ -290,7 +290,7 @@ const produkData = [
 // Store-Card4  
   {
     id: "store-card4",
-    nama: "> Arabica Beans <",
+    nama: "Arabica Beans",
     deskripsi:
       "Biji kopi Arabica kami adalah pilihan kopi yang elegan dan sangat dihargai di seluruh dunia. Dikenal dengan kelembutan rasa dan aroma yang kompleks, kopi Arabica membawa pengalaman kopi yang lembut dan memuaskan bagi para penikmat kopi.",
     rating: 4,
@@ -301,7 +301,7 @@ const produkData = [
 // Store-Card5  
   {
     id: "store-card5",
-    nama: "> Excelsa Beans <",
+    nama: "Excelsa Beans",
     deskripsi:
       "Biji kopi Excelsa kami adalah varietas kopi yang menarik dan unik, dikenal dengan karakteristik rasa yang berbeda dan kompleks. Dipetik dari pohon kopi Excelsa yang tumbuh di ketinggian tertentu, biji kopi ini menawarkan pengalaman kopi yang penuh petualangan.",
     harga: 55000,
@@ -312,7 +312,7 @@ const produkData = [
 // Store-Card6
   {
     id: "store-card6",
-    nama: "> Latte Beans <",
+    nama: "Latte Beans",
     deskripsi:
       "Biji kopi Latte kami dirancang khusus untuk menciptakan pengalaman kopi latte yang luar biasa. Dipilih dari biji berkualitas tinggi, kopi ini memadukan kehalusan dan kompleksitas yang ideal untuk perpaduan espresso dan susu.",
     rating: 4,
@@ -323,7 +323,7 @@ const produkData = [
 //  Store-Card7 
   {
     id: "store-card7",
-    nama: "> Liberica Beans <",
+    nama: "Liberica Beans",
     deskripsi:
       "Biji kopi Liberica kami adalah varietas kopi yang unik dan menghadirkan pengalaman kopi yang berbeda. Dikenal dengan daunnya yang besar dan berbentuk inovatif, kopi Liberica menyuguhkan keberanian rasa yang berbeda dari varietas kopi lainnya, menawarkan petualangan baru bagi para penikmat kopi.",
     rating: 4,
@@ -334,7 +334,7 @@ const produkData = [
 // Store-Card8
   {
     id: "store-card8",
-    nama: "> Robusta Beans <",
+    nama: "Robusta Beans",
     deskripsi:
       "Biji kopi Robusta kami menampilkan karakter yang kuat dan penuh tubuh, menciptakan pengalaman kopi yang intens dan berani. Dikenal dengan keasamannya yang rendah dan kandungan kafein yang tinggi, kopi Robusta memberikan kebangkitan energi yang tahan lama bagi para pencinta kopi yang mencari pengalaman yang tegas.",
     rating: 2,
