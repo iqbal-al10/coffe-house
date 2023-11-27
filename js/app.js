@@ -729,12 +729,17 @@ updateCartNotification();
       title: '<span style="color: #b6895b;">Saran Anda Sudah Kami Terima.</span>',
       icon: 'success',
       iconColor: '#b6895b',
-      titleSize: '10px',
       width: '50%',
       color: '#fff',
       background: '#111',
       showConfirmButton: false,
-      timer: 5000,
+      timer: 3300,
+      showClass: {
+        popup: 'animate__animated animate__fadeInUpBig animate__fast',
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutDownBig animate__fast',
+      },
     })
     return false;
   }
