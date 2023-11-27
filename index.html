@@ -96,7 +96,7 @@
           "Coba kopi kami, nikmati kelezatan penuh rasa dalam setiap tegukan.
           <br />Pengalaman kopi yang tak terlupakan!"
         </p>
-        <a href="#product" class="cta">BUY NOW!</a>
+        <a href="#store" class="cta">BUY NOW!</a>
       </section>
     </main>
     <!-- Hero Section End -->
@@ -177,7 +177,8 @@
 
           <div class="input-grup">
             <i class="fa-solid fa-phone"></i>
-            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required autocomplete="on" minlength="10" maxlength="15" pattern="(\+62|62|0)8[1-9][0-9]{7,10}$" oninvalid="this.setCustomValidity('Masukkan No Hp anda dengan Benar KONTOL')" oninput="this.setCustomValidity('')"/>
+            <input type="tel" name="phoneNumber" id="phoneNumber" inputmode="numeric" placeholder="Phone Number" required autocomplete="on" minlength="10" maxlength="14" pattern="(62|0)8[1-9][0-9]{7,10}$" oninvalid="this.setCustomValidity('Masukkan No Hp anda dengan Benar KONTOL')" oninput="this.setCustomValidity('')" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+
           </div>
 
           <div class="input-grup">
