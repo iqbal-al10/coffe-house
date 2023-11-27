@@ -23,9 +23,6 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -172,7 +169,7 @@
           class="map"
         ></iframe>
 
-        <form action="#" method="" id="whatsappform" class="form">
+        <form class="form" method="post" onsubmit="return inputBtn(this)">
           <div class="input-grup">
             <i class="fa-solid fa-user"></i>
             <input type="text" name="username" id="username" placeholder="Username" required autocomplete="off" minlength="2" maxlength="30" pattern=".*\d+.*" oninvalid="this.setCustomValidity('Masukkan Username anda dengan benar dan terdapat minimal 1 angka')" oninput="this.setCustomValidity('')"/>
@@ -185,10 +182,10 @@
 
           <div class="input-grup">
             <i class="fa-solid fa-inbox"></i>
-            <input type="text" name="suggestionBox" id="suggestionBox" placeholder="Suggestion Box (Optional)" autocomplete="off" minlength="5"/>
+            <input type="text" name="suggestionBox" id="suggestionBox" placeholder="Suggestion Box (Optional)" autocomplete="off"/>
           </div>
 
-          <button onclick="showBtn()" type="submit" class="btn">
+          <button type="submit" class="btn">
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </form>
@@ -212,14 +209,13 @@
         Created By : Iqbal_al <span style="color: #000"> | </span> &copy; 2023
       </p>
       <div class="footer-sosmed">
-        <a href="https://wa.me/+6285746222168"
+        <a target="_blank" href="https://wa.me/+6285710379820"
           ><i class="fa-brands fa-whatsapp"></i
         ></a>
-        <a
-          href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=iqbal.alhuda1007@gmail.com"
+        <a target="_blank" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=iqbal.alhuda1007@gmail.com"
           ><i class="fa-regular fa-envelope"></i
         ></a>
-        <a href="https://www.instagram.com/iqbal_alh"
+        <a target="_blank" href="https://www.instagram.com/iqbal_alh"
           ><i class="fa-brands fa-instagram"></i
         ></a>
       </div>
@@ -260,5 +256,8 @@
 
     <!-- JS -->
     <script src="js/app.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   </body>
 </html>

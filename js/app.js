@@ -48,6 +48,8 @@ document.addEventListener("click", function (e) {
   }
 });
 
+
+
 // Product Menu
 const products = [
   // Product1
@@ -718,3 +720,21 @@ loadCartFromLocalStorage();
 
 // Memanggil fungsi untuk memperbarui tampilan penghitung keranjang
 updateCartNotification();
+
+
+// Sweet Alert
+  function inputBtn(form) {
+    Swal.fire({
+      text: 'Terima Kasih Atas Saran Anda Yang Sangat Membantu Kami!',
+      title: '<span style="color: #b6895b;">Saran Anda Sudah Kami Terima.</span>',
+      icon: 'success',
+      iconColor: '#b6895b',
+      titleSize: '10px',
+      width: '50%',
+      color: '#fff',
+      background: '#111',
+      showConfirmButton: false,
+      timer: 5000,
+    })
+    return false;
+  }
