@@ -660,11 +660,6 @@ function updateCartTotal() {
   // Log untuk debugging
   console.log("produkTypeTotal:", produkTypeTotal);
   console.log("Total Semua Harga:", totalSemuaHarga);
-
-  // Menunda penyimpanan ke localStorage menggunakan setTimeout
-  setTimeout(() => {
-    saveCartToLocalStorage();
-  }, 100);
 }
 
 function saveCartToLocalStorage() {
@@ -695,22 +690,21 @@ function loadCartFromLocalStorage() {
   updateCartNotification();
 }
 
-document.getElementById("checkout").addEventListener("click", function () {
-  const noHp = "6285710379820";
-  let pesan = 'Halo Kak! Saya Mau Checkout :';
-
-
-  // Gantilah dengan logika Anda untuk mendapatkan produk yang dipilih
-  // const produkDipilih = [produkData[0], produkData[1], produkData[2], produkData[3], produkData[4], produkData[5], produkData[6], produkData[7]];
-
-  // for (const produk of produkDipilih) {
-  //   pesan += `\n Produk: "${produk.nama}".\n  Harga: "${produk.harga}".\n`; // Menambahkan informasi produk ke pesan
-  // }
-
-  let linkWa = 'https://api.whatsapp.com/send?phone=' + noHp + '&text=' + pesan;
-
-  window.open(linkWa, '_blank');
-});
+// Funtion Checkout
+function checkoutToWhatsapp() {
+  const productName = document.querySelector('.nama-products').textContent;
+  const productPrice = parseInt(document.querySelector('.item-price').textContent.replace(/\D/g, ''));
+  const totalItem = parseInt(document.querySelector('.total-item').textContent);
+  const totalHarga = parseInt(document.querySelector('.total-harga').textContent.replace(/\D/g, ''));
+ 
+  // Generate WhatsApp link with necessary parameters
+  const waLink = `https://wa.me/6285710379820?text=Halo Kak! Saya Mau Checkout : ${productName}, total item produk ${totalItem}, harga produk ${rupiah(productPrice)}, dan total harga produk ${rupiah(totalHarga)}`;
+ 
+  // Redirect user to the WhatsApp link
+  window.open(waLink, '_blank');
+ }
+ 
+ document.getElementById('checkout').addEventListener('click', checkoutToWhatsapp);
 
 // Menampilkan kartu produk saat halaman dimuat
 tampilkanKartuProduk();
@@ -745,11 +739,14 @@ updateCartNotification();
   }
 
   // Scroll Reveal
-  ScrollReveal().reveal('.content', { origin: 'left', distance: '70px', duration: 1000, reset: true });
-  // Hero
-  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '100px', duration: 1000, reset: true });
+  // Logo
+  ScrollReveal().reveal('.logo', { origin: 'top', distance: '50px', duration: 1000 })
 
+  // Hero
+  ScrollReveal().reveal('.content', { origin: 'left', distance: '70px', duration: 1000, reset: true });
+  
   // About
+  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '100px', duration: 1000, reset: true });
   ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '70px', duration: 1000, reset: true });
   ScrollReveal().reveal('.visi', { origin: 'right', distance: '50px', duration: 1000, reset: true, delay: 300 });
 
