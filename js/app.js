@@ -513,7 +513,7 @@ function addToCart(productId, event) {
     }
   }
   // Tambahkan teks notifikasi ke dalam elemen notifyCart
-  notifyCart.textContent = "halo";
+  notifyCart.textContent = "";
 }
 
 function tambahkanItemKeKeranjang(selectedProduct, event) {
@@ -697,15 +697,15 @@ function loadCartFromLocalStorage() {
 
 document.getElementById("checkout").addEventListener("click", function () {
   const noHp = "6285710379820";
-  let pesan = 'Kami Mempunyai 8 Produk. Silahkan anda konfirmasi kepada kami Produk manakah yg anda beli!                    ';
+  let pesan = 'Halo Kak! Saya Mau Checkout :';
 
 
   // Gantilah dengan logika Anda untuk mendapatkan produk yang dipilih
-  const produkDipilih = [produkData[0], produkData[1], produkData[2], produkData[3], produkData[4], produkData[5], produkData[6], produkData[7]]; // Contoh pemilihan produk 1, 3, dan 5
+  // const produkDipilih = [produkData[0], produkData[1], produkData[2], produkData[3], produkData[4], produkData[5], produkData[6], produkData[7]];
 
-  for (const produk of produkDipilih) {
-    pesan += `\n Produk: "${produk.nama}".\n  Harga: "${produk.harga}".\n`; // Menambahkan informasi produk ke pesan
-  }
+  // for (const produk of produkDipilih) {
+  //   pesan += `\n Produk: "${produk.nama}".\n  Harga: "${produk.harga}".\n`; // Menambahkan informasi produk ke pesan
+  // }
 
   let linkWa = 'https://api.whatsapp.com/send?phone=' + noHp + '&text=' + pesan;
 
@@ -743,3 +743,27 @@ updateCartNotification();
     })
     return false;
   }
+
+  // Scroll Reveal
+  ScrollReveal().reveal('.content', { origin: 'left', distance: '70px', duration: 1000, reset: true });
+  // Hero
+  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '100px', duration: 1000, reset: true });
+
+  // About
+  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '70px', duration: 1000, reset: true });
+  ScrollReveal().reveal('.visi', { origin: 'right', distance: '50px', duration: 1000, reset: true, delay: 300 });
+
+  // Menu 
+  ScrollReveal().reveal('#flip-container', { distance: '70px', duration: 1500, reset: true });
+  ScrollReveal().reveal('.flip-card', { interval: 120, reset: true });
+
+  // Store Produk
+  ScrollReveal().reveal('#produk-container', { distance: '100px', duration: 1500, reset: true });
+  ScrollReveal().reveal('.store-card', { interval: 150, reset: true });
+
+  // Contact
+  ScrollReveal().reveal('.row', { origin: 'bottom', distance: '300px', duration: 1000, reset: true });
+  ScrollReveal().reveal('.map', { origin: 'left', distance: '70px', duration: 1000, delay: 200, reset: true });
+  ScrollReveal().reveal('.form', { origin: 'right', distance: '70px', duration: 1000, delay: 200, reset: true });
+  ScrollReveal().reveal('.input-grup', { interval: 400, reset: true });
+  
