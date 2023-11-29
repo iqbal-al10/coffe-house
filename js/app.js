@@ -256,7 +256,7 @@ renderProducts();
 const produkData = [
   // Store-Card1
   {
-    id: "store-card1",
+    id: "Produk-1",
     hotOffer: 1,
     nama: "Regular Beans",
     deskripsi:
@@ -268,7 +268,7 @@ const produkData = [
   },
   // Store-Card2
   {
-    id: "store-card2",
+    id: "Produk-2",
     hotOffer: 1,
     nama: "Espresso Beans",
     deskripsi:
@@ -280,7 +280,7 @@ const produkData = [
   },
   // Store-Card3
   {
-    id: "store-card3",
+    id: "Produk-3",
     hotOffer: 1,
     nama: "Luwak Beans",
     deskripsi:
@@ -292,7 +292,7 @@ const produkData = [
   },
   // Store-Card4
   {
-    id: "store-card4",
+    id: "Produk-4",
     nama: "Arabica Beans",
     deskripsi:
       "Biji kopi Arabica kami adalah pilihan kopi yang elegan dan sangat dihargai di seluruh dunia. Dikenal dengan kelembutan rasa dan aroma yang kompleks, kopi Arabica membawa pengalaman kopi yang lembut dan memuaskan bagi para penikmat kopi.",
@@ -303,7 +303,7 @@ const produkData = [
   },
   // Store-Card5
   {
-    id: "store-card5",
+    id: "Produk-5",
     nama: "Excelsa Beans",
     deskripsi:
       "Biji kopi Excelsa kami adalah varietas kopi yang menarik dan unik, dikenal dengan karakteristik rasa yang berbeda dan kompleks. Dipetik dari pohon kopi Excelsa yang tumbuh di ketinggian tertentu, biji kopi ini menawarkan pengalaman kopi yang penuh petualangan.",
@@ -314,7 +314,7 @@ const produkData = [
   },
   // Store-Card6
   {
-    id: "store-card6",
+    id: "Produk-6",
     nama: "Latte Beans",
     deskripsi:
       "Biji kopi Latte kami dirancang khusus untuk menciptakan pengalaman kopi latte yang luar biasa. Dipilih dari biji berkualitas tinggi, kopi ini memadukan kehalusan dan kompleksitas yang ideal untuk perpaduan espresso dan susu.",
@@ -325,7 +325,7 @@ const produkData = [
   },
   //  Store-Card7
   {
-    id: "store-card7",
+    id: "Produk-7",
     nama: "Liberica Beans",
     deskripsi:
       "Biji kopi Liberica kami adalah varietas kopi yang unik dan menghadirkan pengalaman kopi yang berbeda. Dikenal dengan daunnya yang besar dan berbentuk inovatif, kopi Liberica menyuguhkan keberanian rasa yang berbeda dari varietas kopi lainnya, menawarkan petualangan baru bagi para penikmat kopi.",
@@ -336,7 +336,7 @@ const produkData = [
   },
   // Store-Card8
   {
-    id: "store-card8",
+    id: "Produk-8",
     nama: "Robusta Beans",
     deskripsi:
       "Biji kopi Robusta kami menampilkan karakter yang kuat dan penuh tubuh, menciptakan pengalaman kopi yang intens dan berani. Dikenal dengan keasamannya yang rendah dan kandungan kafein yang tinggi, kopi Robusta memberikan kebangkitan energi yang tahan lama bagi para pencinta kopi yang mencari pengalaman yang tegas.",
@@ -475,7 +475,6 @@ function updateCartNotification() {
 
 // Tombol addToCart
 function addToCart(productId, event) {
-  // Menghentikan perilaku default dari event jika ada
   if (event) {
     event.preventDefault();
   }
@@ -691,20 +690,50 @@ function loadCartFromLocalStorage() {
 }
 
 // Funtion Checkout
-function checkoutToWhatsapp() {
-  const productName = document.querySelector('.nama-products').textContent;
-  const productPrice = parseInt(document.querySelector('.item-price').textContent.replace(/\D/g, ''));
-  const totalItem = parseInt(document.querySelector('.total-item').textContent);
-  const totalHarga = parseInt(document.querySelector('.total-harga').textContent.replace(/\D/g, ''));
+function checkout() {
+  const cartContainer = document.getElementById("cart-container");
+  let products = [];
  
-  // Generate WhatsApp link with necessary parameters
-  const waLink = `https://wa.me/6285710379820?text=Halo Kak! Saya Mau Checkout : ${productName}, total item produk ${totalItem}, harga produk ${rupiah(productPrice)}, dan total harga produk ${rupiah(totalHarga)}`;
+  // Mengumpulkan data produk berdasarkan data yang ada di dalam keranjang
+  cartContainer.querySelectorAll(".cart-item").forEach(function (cartItem) {
+    const productId = cartItem.getAttribute("data-product-id");
+    const productName = cartItem.querySelector('.nama-products').textContent;
+    const productPrice = parseInt(cartItem.querySelector('.item-price').textContent.replace(/\D/g, ''));
+    const quantity = parseInt(cartItem.querySelector(".total-item").textContent);
+    const price = parseInt(cartItem.getAttribute("data-harga"));
+    const totalPrice = price * quantity;
  
-  // Redirect user to the WhatsApp link
-  window.open(waLink, '_blank');
+     // Ambil data produk yang relevan berdasarkan ID produk
+     const product = getProductById(productId);
+     products.push({ ...product, productId, productName, productPrice, quantity, totalPrice });
+  });
+ 
+  // Buat pesan yang akan dikirim ke WhatsApp
+  let message = "Username : . . . \nNo.Hp : . . . \n\nHalo Kak! Saya Mau Checkout : \n";
+  products.forEach(function (product, index) {
+     message += `>NamaProduk : ${product.productName} | Harga : ${rupiah(product.productPrice)} | Total Item : ${product.quantity} | Total Harga : ${rupiah(product.totalPrice)}|| \n`;
+     if (index < products.length - 1) {
+       message += "";
+     }
+  });
+ 
+  // Buat tautan ke WhatsApp
+  const whatsappUrl = `https://wa.me/6285710379820?text=${encodeURIComponent(message)}`;
+ 
+  // Arahkan pengguna ke tautan tersebut
+  window.open(whatsappUrl, "_blank");
  }
  
- document.getElementById('checkout').addEventListener('click', checkoutToWhatsapp);
+ function getProductById(productId) {
+  // Gantikan dengan logika pengambilan data produk berdasarkan ID produk Anda
+  // Contoh: Mengambil data dari server atau database Anda
+  // Disini saya hanya menggunakan objek static untuk sementara
+  return products.find(function (product) {
+     return product.id === productId;
+  });
+ }
+ 
+ document.getElementById('checkout').addEventListener('click', checkout);
 
 // Menampilkan kartu produk saat halaman dimuat
 tampilkanKartuProduk();
@@ -746,21 +775,21 @@ updateCartNotification();
   ScrollReveal().reveal('.content', { origin: 'left', distance: '70px', duration: 1000, reset: true });
   
   // About
-  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '100px', duration: 1000, reset: true });
-  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '70px', duration: 1000, reset: true });
-  ScrollReveal().reveal('.visi', { origin: 'right', distance: '50px', duration: 1000, reset: true, delay: 300 });
+  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '100px', duration: 800, reset: true });
+  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '70px', duration: 800, reset: true });
+  ScrollReveal().reveal('.visi', { origin: 'right', distance: '50px', duration: 800, reset: true, delay: 300 });
 
   // Menu 
-  ScrollReveal().reveal('#flip-container', { distance: '70px', duration: 1500, reset: true });
+  ScrollReveal().reveal('#flip-container', { distance: '70px', duration: 1000, reset: true });
   ScrollReveal().reveal('.flip-card', { interval: 120, reset: true });
 
   // Store Produk
-  ScrollReveal().reveal('#produk-container', { distance: '100px', duration: 1500, reset: true });
+  ScrollReveal().reveal('#produk-container', { distance: '100px', duration: 1000, reset: true });
   ScrollReveal().reveal('.store-card', { interval: 150, reset: true });
 
   // Contact
   ScrollReveal().reveal('.row', { origin: 'bottom', distance: '300px', duration: 1000, reset: true });
   ScrollReveal().reveal('.map', { origin: 'left', distance: '70px', duration: 1000, delay: 200, reset: true });
   ScrollReveal().reveal('.form', { origin: 'right', distance: '70px', duration: 1000, delay: 200, reset: true });
-  ScrollReveal().reveal('.input-grup', { interval: 400, reset: true });
+  ScrollReveal().reveal('.input-grup', { interval: 300, reset: true });
   

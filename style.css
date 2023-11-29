@@ -385,8 +385,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 9.9rem;
-  height: 1.75rem;
+  width: 10rem;
+  height: 1.9rem;
   transform: scaleX(0);
   transform-origin: right;
   transition: 300ms;
@@ -399,10 +399,10 @@ body {
 .navbar .navbar-extra .search-form input {
   width: 100%;
   height: 100%;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   background-color: #fff;
   color: var(--bg);
-  padding: 0.1rem 0.3rem;
+  padding: 0.15rem 0.3rem;
   border-radius: 0.05rem 0 0 0.05rem;
 }
 
@@ -410,16 +410,17 @@ body {
   color: #fff;
 }
 
-.navbar .navbar-extra .fa-magnifying-glass {
-  padding: 0.2rem;
+.navbar .navbar-extra #search-button {
+  padding: 0.125rem 0.25rem;
+  height: 1.9rem;
   background-color: #fff;
   color: var(--bg);
   border: 2px solid #fff;
   border-radius: 0.05rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.navbar .navbar-extra .fa-magnifying-glass:hover {
+.navbar .navbar-extra #search-button:hover {
   border: 2px solid var(--bg);
   transform: scale(1.1);
   background-color: rgb(230, 230, 230);

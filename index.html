@@ -58,11 +58,10 @@
           />
           <label for="search-box"></label>
         </div>
-        <!-- Search Form End -->
 
-        <a id="search-button" href="#"
+        <button type="button" onclick="searchProducts()" id="search-button"
           ><i class="fa-solid fa-magnifying-glass"></i>
-        </a>
+        </button>
 
         <a id="cart-shopping-button" href="#"
           ><i class="fa-solid fa-cart-shopping">
@@ -182,7 +181,6 @@
           <div class="input-grup">
             <i class="fa-solid fa-phone"></i>
             <input type="tel" name="phoneNumber" id="phoneNumber" inputmode="numeric" placeholder="Phone Number" required autocomplete="on" minlength="10" maxlength="14" pattern="(62|0)8[1-9][0-9]{7,10}$" oninvalid="this.setCustomValidity('Masukkan No Hp anda dengan Benar KONTOL')" oninput="this.setCustomValidity('')" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
-
           </div>
 
           <div class="input-grup">
