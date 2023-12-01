@@ -25,6 +25,8 @@ document.querySelector("#cart-shopping-button").onclick = (e) => {
   e.preventDefault();
 };
 
+
+
 // KLIK DILUAR AREA AGAR CLOSE
 // Mengilangkan side bar diluar area
 const menu = document.querySelector("#menu-bars");
@@ -47,8 +49,6 @@ document.addEventListener("click", function (e) {
     shoppingCart.classList.remove("active");
   }
 });
-
-
 
 // Product Menu
 const products = [
@@ -241,7 +241,7 @@ function createProductElement(product) {
   return flipCard;
 }
 
-function renderProducts() {
+function rendersProducts() {
   const flipContainer = document.getElementById("flip-container");
 
   products.forEach((product) => {
@@ -250,7 +250,7 @@ function renderProducts() {
   });
 }
 
-renderProducts();
+rendersProducts();
 
 // Store Card & Modal Box
 const produkData = [
@@ -362,7 +362,7 @@ function buatKartuProduk(produk) {
             { length: produk.hotOffer },
             () => '<i class="fa-solid fa-fire-flame-curved"></i>'
           ).join("")}</div>
-          <a href="#" onclick="tampilkanModal(event, '${
+          <a href="" onclick="tampilkanModal(event, '${
             produk.id
           }')" class="item-detail-button">
             <i class="fa-solid fa-eye"></i>
@@ -711,7 +711,7 @@ function checkout() {
   // Buat pesan yang akan dikirim ke WhatsApp
   let message = "Username : . . . \nNo.Hp : . . . \n\nHalo Kak! Saya Mau Checkout : \n";
   products.forEach(function (product, index) {
-     message += `>NamaProduk : ${product.productName} | Harga : ${rupiah(product.productPrice)} | Total Item : ${product.quantity} | Total Harga : ${rupiah(product.totalPrice)}|| \n`;
+     message += `>NamaProduk : ${product.productName} | Harga : ${rupiah(product.productPrice)} | Total Item : ${product.quantity} | Total Harga : ${rupiah(product.totalPrice)} || \n`;
      if (index < products.length - 1) {
        message += "";
      }
@@ -769,27 +769,92 @@ updateCartNotification();
 
   // Scroll Reveal
   // Logo
-  ScrollReveal().reveal('.logo', { origin: 'top', distance: '50px', duration: 1000 })
+  ScrollReveal().reveal('.logo', { origin: 'top', distance: '75px', duration: 1000 })
 
   // Hero
-  ScrollReveal().reveal('.content', { origin: 'left', distance: '70px', duration: 1000, reset: true });
+  ScrollReveal().reveal('.content', { origin: 'left', distance: '50px', duration: 1000, reset: true });
   
   // About
-  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '100px', duration: 800, reset: true });
+  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '70px', duration: 800, reset: true });
   ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '70px', duration: 800, reset: true });
   ScrollReveal().reveal('.visi', { origin: 'right', distance: '50px', duration: 800, reset: true, delay: 300 });
 
   // Menu 
-  ScrollReveal().reveal('#flip-container', { distance: '70px', duration: 1000, reset: true });
+  ScrollReveal().reveal('#flip-container', { duration: 1000, reset: true });
   ScrollReveal().reveal('.flip-card', { interval: 120, reset: true });
 
   // Store Produk
-  ScrollReveal().reveal('#produk-container', { distance: '100px', duration: 1000, reset: true });
+  ScrollReveal().reveal('#produk-container', { duration: 1000, reset: true });
   ScrollReveal().reveal('.store-card', { interval: 150, reset: true });
 
   // Contact
-  ScrollReveal().reveal('.row', { origin: 'bottom', distance: '300px', duration: 1000, reset: true });
-  ScrollReveal().reveal('.map', { origin: 'left', distance: '70px', duration: 1000, delay: 200, reset: true });
-  ScrollReveal().reveal('.form', { origin: 'right', distance: '70px', duration: 1000, delay: 200, reset: true });
+  ScrollReveal().reveal('.map', { origin: 'left', distance: '50px', duration: 1000, delay: 200, reset: true });
+  ScrollReveal().reveal('.form', { origin: 'right', distance: '30px', duration: 1000, delay: 200, reset: true });
   ScrollReveal().reveal('.input-grup', { interval: 300, reset: true });
   
+// Search Bar
+  function renderProductCard(product) {
+    return `
+    <a href="" onclick="tampilkanModal(event, '${product.id}')" class="item-detail-button">
+    <img src="${product.gambarSrc}" alt="${product.nama}" style="max-width: 100%;">
+    <h6>${product.nama}</h6>
+        </a>
+    `;
+  }
+
+  function renderProducts(products) {
+    const searchList = document.getElementById('search-list');
+    searchList.innerHTML = '';
+  
+    if (products.length === 0) {
+      searchList.innerHTML = '<p style="color: #000;">Tidak ditemukan.</p>';
+    } else {
+      products.forEach(product => {
+        searchList.innerHTML += renderProductCard(product);
+      });
+    }
+  
+    // Tampilkan elemen dengan ID "productList" hanya jika sudah ada kata kunci pencarian
+    searchList.style.display = products.length > 0 ? 'flex' : 'none';
+  }
+  
+  function searchProducts() {
+    const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+  
+    // Tambahkan pengecekan tambahan untuk menentukan apakah input mengandung huruf
+    const hasLetters = /[a-zA-Z]/.test(searchInput);
+  
+    if (hasLetters) {
+      const filteredProducts = produkData.filter(product => product.nama.toLowerCase().includes(searchInput));
+      renderProducts(filteredProducts);
+    } else {
+      // Jika input tidak mengandung huruf, sembunyikan searchList
+      const searchList = document.getElementById('search-list');
+      searchList.innerHTML = '';
+      searchList.style.display = 'none';
+    }
+  }
+
+  // Fungsi untuk menangani klik di luar area searchList
+function handleDocumentClick(event) {
+  const searchList = document.getElementById('search-list');
+
+  // Periksa apakah elemen yang diklik bukan bagian dari searchList
+  if (!searchList.contains(event.target)) {
+    searchList.style.display = 'none';
+  }
+}
+// Tambahkan event listener untuk mendengarkan klik di dokumen
+document.addEventListener('click', handleDocumentClick);
+
+  
+  function handleAutocomplete() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredProducts = produkData.filter(product => product.nama.toLowerCase().includes(searchInput));
+  
+    renderProducts(filteredProducts);
+  }
+  // Tampilkan elemen dengan ID "productList" hanya jika sudah ada kata kunci pencarian
+  document.getElementById('productList').style.display = 'none';  
+  
+

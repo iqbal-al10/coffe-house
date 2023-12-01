@@ -51,18 +51,28 @@
         <!-- Search Form Start -->
         <div class="search-form">
           <input
-            type="search"
-            id="search-box"
+            type="text"
+            id="searchInput"
             placeholder="Search Here..."
-            id="search-box"
+            oninput="handleAutocomplete()"
+            onkeydown="handleKeyDown()"
           />
-          <label for="search-box"></label>
+          <label for="searchInput"></label>
+          <button class="go-button" type="button" onclick="tampilkanModal(event, `${product.id}`)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>          
         </div>
 
-        <button type="button" onclick="searchProducts()" id="search-button"
+        <button type="button" id="search-button"
           ><i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
+        <!-- Search List -->
+        <ul id="search-list">
+          <!-- Data diisi di JS -->
+        </ul>
+        
+        <!-- Shopping Cart -->
         <a id="cart-shopping-button" href="#"
           ><i class="fa-solid fa-cart-shopping">
             </i
@@ -132,7 +142,7 @@
 
     <!-- Product Section Start -->
     <section id="product" class="product">
-      <h2>Product</h2>
+      <h2>Menu</h2>
       <p class="trademark2">
         "Nikmati kelezatan penuh rasa dalam setiap tegukan!"
       </p>
@@ -156,6 +166,7 @@
       <div class="container" id="produk-container">
         <!-- Data Diambil Di JS -->
         </div>
+      </section>
     <!-- Store Section End -->
 
     <!-- Contact Section Start -->
