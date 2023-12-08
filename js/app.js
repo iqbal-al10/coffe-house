@@ -570,7 +570,7 @@ function tambahkanItemKeKeranjang(selectedProduct, event) {
               selectedProduct.id
             }')"></i>
             </div>
-        </div>
+            </div>
     `;
     cartContainer.appendChild(cartItem);
 
@@ -693,7 +693,8 @@ function loadCartFromLocalStorage() {
 function checkout() {
   const cartContainer = document.getElementById("cart-container");
   let products = [];
- 
+  let totalSemuaHarga = 0;  // Tambahkan deklarasi totalSemuaHarga
+
   // Mengumpulkan data produk berdasarkan data yang ada di dalam keranjang
   cartContainer.querySelectorAll(".cart-item").forEach(function (cartItem) {
     const productId = cartItem.getAttribute("data-product-id");
@@ -702,37 +703,44 @@ function checkout() {
     const quantity = parseInt(cartItem.querySelector(".total-item").textContent);
     const price = parseInt(cartItem.getAttribute("data-harga"));
     const totalPrice = price * quantity;
- 
-     // Ambil data produk yang relevan berdasarkan ID produk
-     const product = getProductById(productId);
-     products.push({ ...product, productId, productName, productPrice, quantity, totalPrice });
+
+    // Ambil data produk yang relevan berdasarkan ID produk
+    const product = getProductById(productId);
+    products.push({ ...product, productId, productName, productPrice, quantity, totalPrice });
+    totalSemuaHarga += totalPrice;  // Hitung totalSemuaHarga
   });
- 
+
   // Buat pesan yang akan dikirim ke WhatsApp
-  let message = "Username : . . . \nNo.Hp : . . . \n\nHalo Kak! Saya Mau Checkout : \n";
+  let message = "Isi Username dan No.Hp anda Di bawah ini: \nUsername : . . \nNo.Hp : . . \n\nHalo Kak! Saya Mau Checkout : \n";
+  
   products.forEach(function (product, index) {
-     message += `>NamaProduk : ${product.productName} | Harga : ${rupiah(product.productPrice)} | Total Item : ${product.quantity} | Total Harga : ${rupiah(product.totalPrice)} || \n`;
-     if (index < products.length - 1) {
-       message += "";
-     }
+    message += `>NamaProduk : ${product.productName} | Harga : ${rupiah(product.productPrice)} | Total Item : ${product.quantity} | Total Harga : ${rupiah(product.totalPrice)} || \n`;
+    
+    if (index < products.length - 1) {
+      message += "";
+    }
   });
- 
+
+  // Tambahkan totalSemuaHarga ke dalam pesan
+  message += `\n_*Jumlah Yg Harus DiBayar : ${rupiah(totalSemuaHarga)}*_`;
+
+  // Update total price in the HTML
+  const allPriceElement = document.getElementById("total-semua-harga");
+  allPriceElement.textContent = rupiah(totalSemuaHarga);
+
   // Buat tautan ke WhatsApp
   const whatsappUrl = `https://wa.me/6285710379820?text=${encodeURIComponent(message)}`;
- 
+
   // Arahkan pengguna ke tautan tersebut
   window.open(whatsappUrl, "_blank");
- }
+}
  
  function getProductById(productId) {
-  // Gantikan dengan logika pengambilan data produk berdasarkan ID produk Anda
-  // Contoh: Mengambil data dari server atau database Anda
-  // Disini saya hanya menggunakan objek static untuk sementara
   return products.find(function (product) {
      return product.id === productId;
   });
  }
- 
+
  document.getElementById('checkout').addEventListener('click', checkout);
 
 // Menampilkan kartu produk saat halaman dimuat
@@ -772,12 +780,12 @@ updateCartNotification();
   ScrollReveal().reveal('.logo', { origin: 'top', distance: '75px', duration: 1000 })
 
   // Hero
-  ScrollReveal().reveal('.content', { origin: 'left', distance: '50px', duration: 1000, reset: true });
+  ScrollReveal().reveal('.content', { origin: 'left', distance: '20px', duration: 1000, reset: true });
   
   // About
-  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '70px', duration: 800, reset: true });
-  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '70px', duration: 800, reset: true });
-  ScrollReveal().reveal('.visi', { origin: 'right', distance: '50px', duration: 800, reset: true, delay: 300 });
+  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '20px', duration: 800, reset: true });
+  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '20px', duration: 800, reset: true });
+  ScrollReveal().reveal('.visi', { origin: 'right', distance: '20px', duration: 800, reset: true, delay: 300 });
 
   // Menu 
   ScrollReveal().reveal('#flip-container', { duration: 1000, reset: true });
@@ -788,8 +796,8 @@ updateCartNotification();
   ScrollReveal().reveal('.store-card', { interval: 150, reset: true });
 
   // Contact
-  ScrollReveal().reveal('.map', { origin: 'left', distance: '50px', duration: 1000, delay: 200, reset: true });
-  ScrollReveal().reveal('.form', { origin: 'right', distance: '30px', duration: 1000, delay: 200, reset: true });
+  ScrollReveal().reveal('.map', { origin: 'left', distance: '10px', duration: 1000, delay: 200, reset: true });
+  ScrollReveal().reveal('.form', { origin: 'right', distance: '10px', duration: 1000, delay: 200, reset: true });
   ScrollReveal().reveal('.input-grup', { interval: 300, reset: true });
   
 // Search Bar
