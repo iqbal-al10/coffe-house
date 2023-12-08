@@ -783,9 +783,9 @@ updateCartNotification();
   ScrollReveal().reveal('.content', { origin: 'left', distance: '20px', duration: 1000, reset: true });
   
   // About
-  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '20px', duration: 800, reset: true });
-  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '20px', duration: 800, reset: true });
-  ScrollReveal().reveal('.visi', { origin: 'right', distance: '20px', duration: 800, reset: true, delay: 300 });
+  ScrollReveal().reveal('.about-img', { origin: 'left', distance: '20px', duration: 1000, reset: true });
+  ScrollReveal().reveal('.judul-about', { origin: 'right', distance: '20px', duration: 1000, reset: true });
+  ScrollReveal().reveal('.visi', { origin: 'right', distance: '20px', duration: 1000, reset: true, delay: 300 });
 
   // Menu 
   ScrollReveal().reveal('#flip-container', { duration: 1000, reset: true });

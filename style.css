@@ -428,7 +428,7 @@ body {
   padding: 0.125rem 0.25rem;
   height: 1.9rem;
   background-color: #fff;
-  color: var(--primary);
+  color: var(--bg);
   border: 2px solid var(--bg);
   border-radius: 0.05rem;
   font-size: 1.2rem;
@@ -439,7 +439,7 @@ body {
 .navbar .navbar-extra #search-button:hover {
   border: 2px solid #fff;
   background-color: rgb(230, 230, 230);
-  color: var(--bg);
+  color: var(--primary);
 }
 
 .navbar .navbar-extra #search-list {
